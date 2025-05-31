@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Circular and Rotational Motion - Physics Tutoring Resources</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                tags: 'ams'
+            },
+            chtml: {
+                scale: 1.1
+            }
+        };
+    </script>
+    <style>
+        .topic-content {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .formula-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #dee2e6;
+            border-left: 4px solid #007bff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .formula-box .formula-title {
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .formula-box .equation {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+        
+        .formula-box .variables {
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        
+        .formula-box .variables li {
+            margin-bottom: 5px;
+        }
+        
+        .example-box {
+            border-left: 4px solid #28a745;
+            background-color: #f8fff9;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .example-box .example-title {
+            font-weight: 600;
+            color: #28a745;
+            margin-bottom: 12px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .topic-content h2 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-content h3 {
+            color: #34495e;
+            font-weight: 500;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        
+        .topic-content h4 {
+            color: #5a6c7d;
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        
+        .topic-content p {
+            font-size: 1.05em;
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .table-of-contents {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border: none;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .table-of-contents .card-title {
+            color: #1565c0;
+            font-weight: 600;
+        }
+        
+        .table-of-contents a {
+            color: #7b1fa2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .table-of-contents a:hover {
+            color: #4a148c;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Physics Topics</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-one-dimension.html">Motion in One Dimension</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acceleration.html">Acceleration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forces-newtons-laws.html">Forces and Newton's Laws</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-two-dimensions.html">Motion in Two Dimensions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="circular-rotational-motion.html">Circular and Rotational Motion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="momentum.html">Momentum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="work-energy.html">Work and Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="thermal-energy.html">Thermal Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="magnetism.html">Magnetism, Waves & Optics</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html">Jake's Physics Notes</a>
+        <!-- Navigation buttons removed as requested -->
+        </div>
+    </nav>
+
+    <!-- Topic Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#physics">Physics Notes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Circular and Rotational Motion</li>
+                </ol>
+            </nav>
+            <h1 class="section-title">Circular and Rotational Motion</h1>
+            <p class="lead">Understanding the physics of rotation and circular movement</p>
+        </div>
+    </section>
+
+    <!-- Topic Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="topic-content">
+                <h2>Introduction to Circular and Rotational Motion</h2>
+                <p>Circular motion involves the movement of an object along a circular path, while rotational motion involves the rotation of an object around an axis. These types of motion are crucial in understanding everything from planetary orbits to spinning tops and wheels. Both types of motion involve angular quantities that provide elegant ways to describe rotational phenomena.</p>
+                
+                <div class="table-of-contents card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">In this section:</h5>
+                        <ol>
+                            <li><a href="#uniform">Uniform Circular Motion</a></li>
+                            <li><a href="#centripetal">Centripetal Acceleration and Force</a></li>
+                            <li><a href="#angular">Angular Quantities in Rotational Motion</a></li>
+                            <li><a href="#torque">Torque and Rotational Equilibrium</a></li>
+                            <li><a href="#inertia">Rotational Inertia (Moment of Inertia)</a></li>
+                            <li><a href="#energy">Rotational Energy and Angular Momentum</a></li>
+                            <li><a href="#applications">Applications of Rotational Motion</a></li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h3 id="uniform">Uniform Circular Motion</h3>
+                <p><strong>Uniform circular motion</strong> occurs when an object moves along a circular path with constant speed. Despite the constant speed, the object is constantly accelerating because its direction is continuously changing.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Period and Frequency</div>
+                    <div class="equation">
+                        \[T = \frac{2\pi r}{v} = \frac{2\pi}{\omega}\]
+                        \[f = \frac{1}{T} = \frac{v}{2\pi r} = \frac{\omega}{2\pi}\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(T\) = period (time for one complete revolution, in s)</li>
+                            <li>\(f\) = frequency (number of revolutions per unit time, in Hz)</li>
+                            <li>\(r\) = radius of the circular path (in m)</li>
+                            <li>\(v\) = linear speed (in m/s)</li>
+                            <li>\(\omega\) = angular velocity (in rad/s)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 1: Race Track Motion</div>
+                    <p>A car is moving around a circular track of radius 100 m at a constant speed of 20 m/s. Find the period and frequency of motion.</p>
+                    <p>\[T = \frac{2\pi r}{v} = \frac{2\pi \times 100 \text{ m}}{20 \text{ m/s}} = 31.4 \text{ s}\]</p>
+                    <p>\[f = \frac{1}{T} = \frac{1}{31.4 \text{ s}} \approx 0.032 \text{ Hz (revolutions per second)}\]</p>
+                </div>
+                
+                <h3 id="centripetal">Centripetal Acceleration and Force</h3>
+                <p>In circular motion, an object experiences an acceleration directed toward the center of the circle. This is called <strong>centripetal acceleration</strong>. The force that provides this acceleration is called <strong>centripetal force</strong>.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Centripetal Acceleration and Force</div>
+                    <div class="equation">
+                        \[a_c = \frac{v^2}{r} = \omega^2 r\]
+                        \[F_c = ma_c = m\frac{v^2}{r} = m\omega^2 r\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(a_c\) = centripetal acceleration (in m/s²)</li>
+                            <li>\(F_c\) = centripetal force (in N)</li>
+                            <li>\(m\) = mass of the object (in kg)</li>
+                            <li>\(v\) = linear speed (in m/s)</li>
+                            <li>\(r\) = radius of the circular path (in m)</li>
+                            <li>\(\omega\) = angular velocity (in rad/s)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p>The centripetal force is not a new type of force; it's the name given to the force that causes circular motion. This force can be provided by tension, friction, gravity, or other forces.</p>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 2: Car Rounding a Curve</div>
+                    <p>A 1500 kg car is rounding a curve of radius 50 m at a speed of 15 m/s. What is the centripetal force required?</p>
+                    <p>\[F_c = m\frac{v^2}{r} = 1500 \text{ kg} \times \frac{(15 \text{ m/s})^2}{50 \text{ m}} = 1500 \times \frac{225}{50} = 6750 \text{ N}\]</p>
+                    <p>This force must be provided by friction between the tires and the road.</p>
+                </div>
+                
+                <h3 id="angular">Angular Quantities in Rotational Motion</h3>
+                <p>In rotational motion, we use angular quantities analogous to those in linear motion. These provide a more natural way to describe rotating systems.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Angular Quantities</div>
+                    <div class="equation">
+                        \[\text{Angular Position: } \theta \text{ (in radians)}\]
+                        \[\text{Angular Velocity: } \omega = \frac{d\theta}{dt}\]
+                        \[\text{Angular Acceleration: } \alpha = \frac{d\omega}{dt}\]
+                    </div>
+                </div>
+                
+                <p><strong>Relationships between linear and angular quantities:</strong></p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Linear-Angular Relationships</div>
+                    <div class="equation">
+                        \[v = r\omega\]
+                        \[a_{\text{tangential}} = r\alpha\]
+                        \[a_{\text{centripetal}} = r\omega^2\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(v\) = linear velocity</li>
+                            <li>\(a_{\text{tangential}}\) = tangential acceleration</li>
+                            <li>\(a_{\text{centripetal}}\) = centripetal acceleration</li>
+                            <li>\(r\) = radius from axis of rotation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p>The rotational analogues of the kinematic equations for constant angular acceleration are:</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Rotational Kinematic Equations</div>
+                    <div class="equation">
+                        \[\omega = \omega_0 + \alpha t\]
+                        \[\theta = \theta_0 + \omega_0 t + \frac{1}{2}\alpha t^2\]
+                        \[\omega^2 = \omega_0^2 + 2\alpha(\theta - \theta_0)\]
+                        \[\theta - \theta_0 = \frac{1}{2}(\omega_0 + \omega)t\]
+                    </div>
+                </div>
+                
+                <h3 id="torque">Torque and Rotational Equilibrium</h3>
+                <p><strong>Torque</strong> is the rotational analog of force, causing an object to rotate. It is the product of the force and the perpendicular distance from the line of action of the force to the axis of rotation (the lever arm).</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Torque</div>
+                    <div class="equation">
+                        \[\vec{\tau} = \vec{r} \times \vec{F}\]
+                        \[|\tau| = rF \sin \theta\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(\vec{\tau}\) = torque vector (in N⋅m)</li>
+                            <li>\(\vec{r}\) = position vector from axis to point of force application</li>
+                            <li>\(\vec{F}\) = force vector</li>
+                            <li>\(\theta\) = angle between \(\vec{r}\) and \(\vec{F}\)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p>An object is in <strong>rotational equilibrium</strong> when the net torque acting on it is zero:</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Rotational Equilibrium</div>
+                    <div class="equation">
+                        \[\sum \tau = 0\]
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 3: Torque on a Lever</div>
+                    <p>A 2 m long rod has a mass of 5 kg suspended from one end. If the rod is supported at 0.5 m from the end with the mass, what is the torque about the support?</p>
+                    <p>The force due to the mass is \(F = mg = 5 \text{ kg} \times 9.8 \text{ m/s}^2 = 49 \text{ N}\)</p>
+                    <p>The lever arm is 0.5 m</p>
+                    <p>\[\tau = rF = 0.5 \text{ m} \times 49 \text{ N} = 24.5 \text{ N⋅m}\]</p>
+                </div>
+                
+                <h3 id="inertia">Rotational Inertia (Moment of Inertia)</h3>
+                <p>The <strong>moment of inertia</strong> is a measure of an object's resistance to changes in its rotation. It depends on the distribution of mass relative to the axis of rotation.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Moment of Inertia</div>
+                    <div class="equation">
+                        \[I = \sum m_i r_i^2\]
+                        \[\text{For continuous objects: } I = \int r^2 \, dm\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(I\) = moment of inertia (in kg⋅m²)</li>
+                            <li>\(m_i\) = mass of particle i</li>
+                            <li>\(r_i\) = distance of particle i from the axis of rotation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p><strong>Common moments of inertia:</strong></p>
+                <ul>
+                    <li>Solid sphere about a diameter: \(I = \frac{2}{5}MR^2\)</li>
+                    <li>Hollow sphere about a diameter: \(I = \frac{2}{3}MR^2\)</li>
+                    <li>Solid cylinder about its axis: \(I = \frac{1}{2}MR^2\)</li>
+                    <li>Rod about its center: \(I = \frac{1}{12}ML^2\)</li>
+                    <li>Rod about one end: \(I = \frac{1}{3}ML^2\)</li>
+                </ul>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Newton's Second Law for Rotation</div>
+                    <div class="equation">
+                        \[\tau = I\alpha\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(\tau\) = net torque</li>
+                            <li>\(I\) = moment of inertia</li>
+                            <li>\(\alpha\) = angular acceleration</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3 id="energy">Rotational Energy and Angular Momentum</h3>
+                <p>Objects in rotational motion possess rotational kinetic energy and angular momentum, which are the rotational analogs of linear kinetic energy and momentum.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Rotational Kinetic Energy and Angular Momentum</div>
+                    <div class="equation">
+                        \[K_{\text{rot}} = \frac{1}{2}I\omega^2\]
+                        \[L = I\omega\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(K_{\text{rot}}\) = rotational kinetic energy (in J)</li>
+                            <li>\(L\) = angular momentum (in kg⋅m²/s)</li>
+                            <li>\(I\) = moment of inertia (in kg⋅m²)</li>
+                            <li>\(\omega\) = angular velocity (in rad/s)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p><strong>Conservation of Angular Momentum:</strong> In the absence of external torques, the total angular momentum of a system remains constant.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Conservation of Angular Momentum</div>
+                    <div class="equation">
+                        \[L_{\text{initial}} = L_{\text{final}}\]
+                        \[I_1\omega_1 = I_2\omega_2\]
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 4: Rotating Sphere</div>
+                    <p>A solid sphere of mass 2 kg and radius 0.1 m is rotating at 5 rad/s about an axis through its center. Calculate its rotational kinetic energy.</p>
+                    <p>\[I = \frac{2}{5}MR^2 = \frac{2}{5} \times 2 \text{ kg} \times (0.1 \text{ m})^2 = 0.008 \text{ kg⋅m}^2\]</p>
+                    <p>\[K_{\text{rot}} = \frac{1}{2}I\omega^2 = \frac{1}{2} \times 0.008 \text{ kg⋅m}^2 \times (5 \text{ rad/s})^2 = 0.1 \text{ J}\]</p>
+                </div>
+                
+                <h3 id="applications">Applications of Rotational Motion</h3>
+                <p>Understanding circular and rotational motion is essential for many real-world applications:</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-globe text-primary"></i> Astronomy & Space</h5>
+                        <ul>
+                            <li>Planetary motion and satellite orbits</li>
+                            <li>Galaxy rotation and stellar mechanics</li>
+                            <li>Spacecraft attitude control</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-cogs text-success"></i> Mechanical Engineering</h5>
+                        <ul>
+                            <li>Wheels, gears, and transmission systems</li>
+                            <li>Motors and turbines</li>
+                            <li>Flywheels for energy storage</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-compass text-warning"></i> Navigation & Control</h5>
+                        <ul>
+                            <li>Gyroscopes and inertial guidance</li>
+                            <li>Stabilization systems</li>
+                            <li>Precision instruments</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-running text-danger"></i> Sports & Recreation</h5>
+                        <ul>
+                            <li>Figure skating spins and conservation</li>
+                            <li>Discus and shot put throwing</li>
+                            <li>Bicycle and motorcycle dynamics</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Key Concepts Summary</h2>
+                <ul>
+                    <li><strong>Circular motion:</strong> Constant speed but changing direction</li>
+                    <li><strong>Centripetal force:</strong> \(F_c = \frac{mv^2}{r}\) - always points toward center</li>
+                    <li><strong>Angular velocity:</strong> \(\omega = \frac{v}{r}\) - rate of angular change</li>
+                    <li><strong>Torque:</strong> \(\tau = rF \sin \theta\) - rotational force</li>
+                    <li><strong>Moment of inertia:</strong> \(I = \sum mr^2\) - rotational mass</li>
+                    <li><strong>Angular momentum:</strong> \(L = I\omega\) - conserved quantity</li>
+                </ul>
+                
+                <div class="text-center mt-5 mb-3">
+                    <a href="index.html#physics" class="btn btn-outline-primary btn-lg">Back to Physics Topics</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-primary back-to-top" id="backToTop">↑</button>
+
+    <!-- Footer -->
+    <footer style="height: 10%;">
+        <div class="container">
+            <!-- Footer content removed as requested -->
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    
+    <!-- Cal floating-popup embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "60-minute-online-paid-session-50", {origin:"https://cal.com"});
+
+      Cal.ns["60-minute-online-paid-session-50"]("floatingButton", {"calLink":"jakobstrozberg/60-minute-online-paid-session-50","config":{"layout":"month_view"},"buttonText":"Book an Online Tutoring Session"}); 
+      Cal.ns["60-minute-online-paid-session-50"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal floating-popup embed code ends -->
+</body>
+</html> 

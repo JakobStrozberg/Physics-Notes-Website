@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Magnetism, Waves & Optics - Physics Tutoring Resources</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add MathJax for proper formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Add Three.js for 3D graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <style>
+        .topic-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .formula {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: "Courier New", monospace;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .example {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 1000;
+        }
+        
+        /* Enhanced formula display */
+        .formula p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .formula ul {
+            margin-top: 0.5rem;
+        }
+        
+        /* Improve table of contents */
+        .table-of-contents {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .table-of-contents ol {
+            padding-left: 1.5rem;
+        }
+        
+        .table-of-contents a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .table-of-contents a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        /* Major section styling */
+        .major-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .major-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .section-intro {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section-intro p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #495057;
+        }
+        
+        .subsection-separator {
+            margin: 2.5rem 0;
+            padding: 1.5rem 0;
+            border-top: 2px solid #dee2e6;
+        }
+        
+        .subsection-separator h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Visual improvements for better readability */
+        .physics-content {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .content-divider {
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            margin: 3rem 0;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Physics Topics</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-one-dimension.html">Motion in One Dimension</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acceleration.html">Acceleration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forces-newtons-laws.html">Forces and Newton's Laws</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-two-dimensions.html">Motion in Two Dimensions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="circular-rotational-motion.html">Circular and Rotational Motion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="momentum.html">Momentum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="work-energy.html">Work and Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="thermal-energy.html">Thermal Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="magnetism.html">Magnetism, Waves & Optics</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html">Jake's Physics Notes</a>
+        </div>
+    </nav>
+
+    <!-- Topic Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#physics">Physics Notes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Magnetism, Waves & Optics</li>
+                </ol>
+            </nav>
+            <h1 class="section-title">Magnetism, Waves & Optics</h1>
+            <p class="lead">Understanding magnetic fields, wave phenomena, optics, and related concepts</p>
+        </div>
+    </section>
+
+    <!-- Topic Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="topic-content">
+                <h2>Introduction to Magnetism and Wave Phenomena</h2>
+                <p>This section covers a range of important physics concepts including magnetism, waves, optics, and nuclear physics. You'll find comprehensive formulas, explanations, and examples for each topic.</p>
+                
+                <div class="table-of-contents card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">In this section:</h5>
+                        <ol>
+                            <li><a href="#constants">Useful Constants</a></li>
+                            <li><a href="#unit-vectors">Unit Vectors</a></li>
+                            <li><a href="#cross-products">Vector Cross Products</a></li>
+                            <li><a href="#conversions">Useful Conversions</a></li>
+                            <li><a href="#relationships">Magnetic Fields</a>
+                                <ul>
+                                    <li><a href="#magnetic-field-moving-charge">Magnetic Field of a Moving Charge</a></li>
+                                    <li><a href="#magnetic-field-wire">Magnetic Field of a Wire</a></li>
+                                    <li><a href="#magnetic-field-loop">Magnetic Field of a Current Loop</a></li>
+                                    <li><a href="#magnetic-field-dipole">Magnetic Field of a Dipole</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#magnetic-forces">Magnetic Forces</a>
+                                <ul>
+                                    <li><a href="#force-moving-charge">Force on a Moving Charge</a></li>
+                                    <li><a href="#force-current-wire">Force on a Current-Carrying Wire</a></li>
+                                    <li><a href="#force-parallel-wires">Force Between Parallel Wires</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#right-hand-rules">Right-Hand Rules in Electromagnetism</a>
+                                <ul>
+                                    <li><a href="#current-field-rule">Right-Hand Rule for Current and Magnetic Field</a></li>
+                                    <li><a href="#ivb-rule">Right-Hand Rule for Current, Velocity, and Magnetic Field</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#harmonic-motion">Simple Harmonic Motion</a></li>
+                            <li><a href="#waves">Wave Phenomena</a>
+                                <ul>
+                                    <li><a href="#doppler">Doppler Effect</a></li>
+                                    <li><a href="#standing-waves">Standing Waves</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#diffraction">Diffraction and Interference</a></li>
+                            <li><a href="#optics">Optics</a></li>
+                            <li><a href="#nuclear">Nuclear Physics</a></li>
+                            <li><a href="#applications">Applications of Magnetism</a></li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h3 id="constants">Useful Constants</h3>
+                <div class="formula">
+                    <p>\(\pi = 3.142\) - Mathematical constant representing the ratio of a circle's circumference to its diameter</p>
+                    <p>\(g = 9.80~\mathrm{m/s^2}\) - Acceleration due to gravity at Earth's surface</p>
+                    <p>\(e = 1.6 \times 10^{-19}~\mathrm{C}\) - Elementary charge (charge of an electron or proton)</p>
+                    <p>\(c = 2.998 \times 10^8~\mathrm{m/s}\) - Speed of light in vacuum</p>
+                    <p>\(\mu_0 = 4\pi \times 10^{-7}~\mathrm{Tm/A}\) - Permeability of free space (magnetic constant)</p>
+                    <p>\(m_e = 9.11 \times 10^{-31}~\mathrm{kg}\) - Rest mass of an electron</p>
+                    <p>\(m_p = 1.00728~\mathrm{u}\) - Rest mass of a proton in atomic mass units</p>
+                    <p>\(m_n = 1.00866~\mathrm{u}\) - Rest mass of a neutron in atomic mass units</p>
+                    <p>\(m_{^1\mathrm{H}} = 1.00783~\mathrm{u}\) - Mass of a hydrogen-1 atom in atomic mass units</p>
+                    <p>\(m_{^3\mathrm{H}} = 3.01605~\mathrm{u}\) - Mass of a tritium (hydrogen-3) atom in atomic mass units</p>
+                </div>
+                
+                <h3 id="unit-vectors">Unit Vectors</h3>
+                <div class="formula">
+                    <p>\(\hat{\imath} \times \hat{\jmath} = \hat{k}\)</p>
+                    <p>\(\hat{\jmath} \times \hat{k} = \hat{\imath}\)</p>
+                    <p>\(\hat{k} \times \hat{\imath} = \hat{\jmath}\)</p>
+                    <p>\(\hat{\jmath} \times \hat{\imath} = -\hat{k}\)</p>
+                    <p>\(\hat{\imath} \times \hat{k} = -\hat{\jmath}\)</p>
+                    <p>\(\hat{k} \times \hat{\jmath} = -\hat{\imath}\)</p>
+                </div>
+                
+                <h3 id="cross-products">Vector Cross Products</h3>
+                <p>The cross product (or vector product) is a fundamental operation in vector algebra that produces a vector perpendicular to both input vectors. It's essential for understanding magnetic fields, torque, angular momentum, and many other physics concepts.</p>
+                
+                <div class="formula">
+                    <p><strong>Mathematical Definition:</strong></p>
+                    <p>\(\vec{A} \times \vec{B} = \begin{vmatrix} \hat{\imath} & \hat{\jmath} & \hat{k} \\ A_x & A_y & A_z \\ B_x & B_y & B_z \end{vmatrix}\)</p>
+                    <p>\(\vec{A} \times \vec{B} = (A_y B_z - A_z B_y)\hat{\imath} + (A_z B_x - A_x B_z)\hat{\jmath} + (A_x B_y - A_y B_x)\hat{k}\)</p>
+                    <p><strong>Magnitude:</strong></p>
+                    <p>\(|\vec{A} \times \vec{B}| = |\vec{A}||\vec{B}|\sin\theta\)</p>
+                    <p>Where \(\theta\) is the angle between vectors \(\vec{A}\) and \(\vec{B}\)</p>
+                    <p><strong>Key Properties:</strong></p>
+                    <ul>
+                        <li>Anti-commutative: \(\vec{A} \times \vec{B} = -\vec{B} \times \vec{A}\)</li>
+                        <li>Distributive: \(\vec{A} \times (\vec{B} + \vec{C}) = \vec{A} \times \vec{B} + \vec{A} \times \vec{C}\)</li>
+                        <li>Scalar multiplication: \(k(\vec{A} \times \vec{B}) = (k\vec{A}) \times \vec{B} = \vec{A} \times (k\vec{B})\)</li>
+                        <li>Parallel vectors: If \(\vec{A} \parallel \vec{B}\), then \(\vec{A} \times \vec{B} = \vec{0}\)</li>
+                        <li>Self cross product: \(\vec{A} \times \vec{A} = \vec{0}\)</li>
+                    </ul>
+                </div>
+                
+                <h4>Interactive Vector Cross Product Calculator</h4>
+                <p>Use this calculator to explore vector cross products. Enter the components of two vectors and see the result visualized in real-time.</p>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6>Vector A</h6>
+                                <div class="mb-2">
+                                    <label class="form-label">A<sub>x</sub>:</label>
+                                    <input type="number" class="form-control form-control-sm" id="ax" value="1" step="0.1">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">A<sub>y</sub>:</label>
+                                    <input type="number" class="form-control form-control-sm" id="ay" value="0" step="0.1">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">A<sub>z</sub>:</label>
+                                    <input type="number" class="form-control form-control-sm" id="az" value="0" step="0.1">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h6>Vector B</h6>
+                                <div class="mb-2">
+                                    <label class="form-label">B<sub>x</sub>:</label>
+                                    <input type="number" class="form-control form-control-sm" id="bx" value="0" step="0.1">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">B<sub>y</sub>:</label>
+                                    <input type="number" class="form-control form-control-sm" id="by" value="1" step="0.1">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">B<sub>z</sub>:</label>
+                                    <input type="number" class="form-control form-control-sm" id="bz" value="0" step="0.1">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h6>Cross Product A × B</h6>
+                                <div class="mb-2">
+                                    <label class="form-label">C<sub>x</sub>:</label>
+                                    <input type="text" class="form-control form-control-sm" id="cx" readonly>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">C<sub>y</sub>:</label>
+                                    <input type="text" class="form-control form-control-sm" id="cy" readonly>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">C<sub>z</sub>:</label>
+                                    <input type="text" class="form-control form-control-sm" id="cz" readonly>
+                                </div>
+                                <div class="mt-2">
+                                    <small><strong>Magnitude:</strong> <span id="magnitude">1.00</span></small><br>
+                                    <small><strong>Angle between A & B:</strong> <span id="angle">90.0°</span></small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <div id="vectorCanvas" style="width: 100%; height: 400px; border: 1px solid #ddd; border-radius: 5px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);"></div>
+                            <div class="mt-2 text-center">
+                                <small class="text-muted">🖱️ Click and drag to rotate • Scroll to zoom • Right-click and drag to pan</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button class="btn btn-secondary btn-sm me-2" onclick="setExampleVectors(1)">Example 1: i × j</button>
+                                    <button class="btn btn-secondary btn-sm me-2" onclick="setExampleVectors(2)">Example 2: Force</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-secondary btn-sm me-2" onclick="setExampleVectors(3)">Example 3: Magnetic</button>
+                                    <button class="btn btn-outline-secondary btn-sm" onclick="resetVectors()">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example mt-4">
+                    <p><strong>Physics Applications of Cross Products:</strong></p>
+                    <ul>
+                        <li><strong>Magnetic Force:</strong> \(\vec{F} = q\vec{v} \times \vec{B}\) - Force on a charge moving in a magnetic field</li>
+                        <li><strong>Magnetic Field:</strong> \(\vec{B} = \frac{\mu_0}{4\pi} \frac{q \vec{v} \times \hat{r}}{r^2}\) - Field created by a moving charge</li>
+                        <li><strong>Torque:</strong> \(\vec{\tau} = \vec{r} \times \vec{F}\) - Rotational effect of a force</li>
+                        <li><strong>Angular Momentum:</strong> \(\vec{L} = \vec{r} \times \vec{p}\) - Rotational momentum</li>
+                        <li><strong>Angular Velocity:</strong> \(\vec{v} = \vec{\omega} \times \vec{r}\) - Velocity in circular motion</li>
+                    </ul>
+                </div>
+                
+                <script>
+                // 3D Vector visualization variables
+                let scene, camera, renderer, controls;
+                let vectorA, vectorB, vectorC;
+                let arrowHelperA, arrowHelperB, arrowHelperC;
+                let axesHelper, gridHelper;
+                let isThreeJSInitialized = false;
+                
+                // Initialize Three.js scene
+                function initThreeJS() {
+                    if (isThreeJSInitialized) return;
+                    
+                    const container = document.getElementById('vectorCanvas');
+                    if (!container) return;
+                    
+                    // Scene setup
+                    scene = new THREE.Scene();
+                    scene.background = new THREE.Color(0xf8f9fa);
+                    
+                    // Camera setup
+                    camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+                    camera.position.set(5, 5, 5);
+                    camera.lookAt(0, 0, 0);
+                    
+                    // Renderer setup
+                    renderer = new THREE.WebGLRenderer({ antialias: true });
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                    renderer.shadowMap.enabled = true;
+                    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+                    container.appendChild(renderer.domElement);
+                    
+                    // Controls setup
+                    controls = new THREE.OrbitControls(camera, renderer.domElement);
+                    controls.enableDamping = true;
+                    controls.dampingFactor = 0.1;
+                    controls.enableZoom = true;
+                    controls.autoRotate = false;
+                    
+                    // Add coordinate axes
+                    axesHelper = new THREE.AxesHelper(3);
+                    scene.add(axesHelper);
+                    
+                    // Add grid
+                    const gridXY = new THREE.GridHelper(6, 12, 0xcccccc, 0xeeeeee);
+                    gridXY.rotateX(Math.PI / 2);
+                    scene.add(gridXY);
+                    
+                    const gridXZ = new THREE.GridHelper(6, 12, 0xcccccc, 0xeeeeee);
+                    scene.add(gridXZ);
+                    
+                    const gridYZ = new THREE.GridHelper(6, 12, 0xcccccc, 0xeeeeee);
+                    gridYZ.rotateZ(Math.PI / 2);
+                    scene.add(gridYZ);
+                    
+                    // Add lights
+                    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+                    scene.add(ambientLight);
+                    
+                    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+                    directionalLight.position.set(10, 10, 5);
+                    directionalLight.castShadow = true;
+                    scene.add(directionalLight);
+                    
+                    // Add axis labels
+                    addAxisLabels();
+                    
+                    // Handle window resize
+                    window.addEventListener('resize', onWindowResize, false);
+                    
+                    // Start animation loop
+                    animate();
+                    
+                    isThreeJSInitialized = true;
+                }
+                
+                function addAxisLabels() {
+                    const loader = new THREE.FontLoader();
+                    // For simplicity, we'll use basic text geometry or sprite labels
+                    
+                    // Create text sprites for axis labels
+                    function createTextSprite(text, color = '#000000') {
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        canvas.width = 64;
+                        canvas.height = 64;
+                        
+                        context.fillStyle = color;
+                        context.font = '24px Arial';
+                        context.textAlign = 'center';
+                        context.textBaseline = 'middle';
+                        context.fillText(text, 32, 32);
+                        
+                        const texture = new THREE.CanvasTexture(canvas);
+                        const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+                        const sprite = new THREE.Sprite(spriteMaterial);
+                        sprite.scale.set(0.5, 0.5, 1);
+                        
+                        return sprite;
+                    }
+                    
+                    // Add axis labels
+                    const labelX = createTextSprite('X', '#ff0000');
+                    labelX.position.set(3.2, 0, 0);
+                    scene.add(labelX);
+                    
+                    const labelY = createTextSprite('Y', '#00ff00');
+                    labelY.position.set(0, 3.2, 0);
+                    scene.add(labelY);
+                    
+                    const labelZ = createTextSprite('Z', '#0000ff');
+                    labelZ.position.set(0, 0, 3.2);
+                    scene.add(labelZ);
+                }
+                
+                function createArrow(direction, color, length = 1) {
+                    const origin = new THREE.Vector3(0, 0, 0);
+                    const normalizedDirection = direction.clone().normalize();
+                    const arrowHelper = new THREE.ArrowHelper(normalizedDirection, origin, length, color, length * 0.2, length * 0.1);
+                    return arrowHelper;
+                }
+                
+                function addVectorLabel(position, text, color) {
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.width = 128;
+                    canvas.height = 32;
+                    
+                    context.fillStyle = color;
+                    context.font = 'bold 20px Arial';
+                    context.textAlign = 'center';
+                    context.textBaseline = 'middle';
+                    context.fillText(text, 64, 16);
+                    
+                    const texture = new THREE.CanvasTexture(canvas);
+                    const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+                    const sprite = new THREE.Sprite(spriteMaterial);
+                    sprite.scale.set(1, 0.25, 1);
+                    sprite.position.copy(position);
+                    sprite.position.y += 0.3;
+                    
+                    return sprite;
+                }
+                
+                function onWindowResize() {
+                    const container = document.getElementById('vectorCanvas');
+                    if (!container || !camera || !renderer) return;
+                    
+                    camera.aspect = container.clientWidth / container.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                }
+                
+                function animate() {
+                    if (!controls || !renderer || !scene || !camera) return;
+                    
+                    requestAnimationFrame(animate);
+                    controls.update();
+                    renderer.render(scene, camera);
+                }
+                
+                // Cross product calculator functionality
+                function calculateCrossProduct() {
+                    const ax = parseFloat(document.getElementById('ax').value) || 0;
+                    const ay = parseFloat(document.getElementById('ay').value) || 0;
+                    const az = parseFloat(document.getElementById('az').value) || 0;
+                    const bx = parseFloat(document.getElementById('bx').value) || 0;
+                    const by = parseFloat(document.getElementById('by').value) || 0;
+                    const bz = parseFloat(document.getElementById('bz').value) || 0;
+                    
+                    // Calculate cross product components
+                    const cx = ay * bz - az * by;
+                    const cy = az * bx - ax * bz;
+                    const cz = ax * by - ay * bx;
+                    
+                    // Update display
+                    document.getElementById('cx').value = cx.toFixed(2);
+                    document.getElementById('cy').value = cy.toFixed(2);
+                    document.getElementById('cz').value = cz.toFixed(2);
+                    
+                    // Calculate magnitude of cross product
+                    const magnitude = Math.sqrt(cx*cx + cy*cy + cz*cz);
+                    document.getElementById('magnitude').textContent = magnitude.toFixed(2);
+                    
+                    // Calculate angle between vectors
+                    const magA = Math.sqrt(ax*ax + ay*ay + az*az);
+                    const magB = Math.sqrt(bx*bx + by*by + bz*bz);
+                    const dotProduct = ax*bx + ay*by + az*bz;
+                    
+                    let angle = 0;
+                    if (magA > 0 && magB > 0) {
+                        const cosTheta = dotProduct / (magA * magB);
+                        angle = Math.acos(Math.max(-1, Math.min(1, cosTheta))) * 180 / Math.PI;
+                    }
+                    document.getElementById('angle').textContent = angle.toFixed(1) + '°';
+                    
+                    // Update 3D visualization
+                    updateVectors(ax, ay, az, bx, by, bz, cx, cy, cz);
+                }
+                
+                function updateVectors(ax, ay, az, bx, by, bz, cx, cy, cz) {
+                    if (!scene) return;
+                    
+                    // Remove existing vectors
+                    if (arrowHelperA) scene.remove(arrowHelperA);
+                    if (arrowHelperB) scene.remove(arrowHelperB);
+                    if (arrowHelperC) scene.remove(arrowHelperC);
+                    
+                    // Remove existing labels
+                    const labelsToRemove = [];
+                    scene.traverse(function(object) {
+                        if (object.userData.isVectorLabel) {
+                            labelsToRemove.push(object);
+                        }
+                    });
+                    labelsToRemove.forEach(label => scene.remove(label));
+                    
+                    // Create vector A (red)
+                    if (ax !== 0 || ay !== 0 || az !== 0) {
+                        const dirA = new THREE.Vector3(ax, ay, az);
+                        const lengthA = dirA.length();
+                        arrowHelperA = createArrow(dirA, 0xff4444, lengthA);
+                        scene.add(arrowHelperA);
+                        
+                        const labelA = addVectorLabel(dirA, 'A', '#ff4444');
+                        labelA.userData.isVectorLabel = true;
+                        scene.add(labelA);
+                    }
+                    
+                    // Create vector B (blue)
+                    if (bx !== 0 || by !== 0 || bz !== 0) {
+                        const dirB = new THREE.Vector3(bx, by, bz);
+                        const lengthB = dirB.length();
+                        arrowHelperB = createArrow(dirB, 0x4444ff, lengthB);
+                        scene.add(arrowHelperB);
+                        
+                        const labelB = addVectorLabel(dirB, 'B', '#4444ff');
+                        labelB.userData.isVectorLabel = true;
+                        scene.add(labelB);
+                    }
+                    
+                    // Create cross product vector C (green)
+                    if (cx !== 0 || cy !== 0 || cz !== 0) {
+                        const dirC = new THREE.Vector3(cx, cy, cz);
+                        const lengthC = dirC.length();
+                        arrowHelperC = createArrow(dirC, 0x44ff44, lengthC);
+                        scene.add(arrowHelperC);
+                        
+                        const labelC = addVectorLabel(dirC, 'A × B', '#44ff44');
+                        labelC.userData.isVectorLabel = true;
+                        scene.add(labelC);
+                    }
+                }
+                
+                function setExampleVectors(example) {
+                    switch(example) {
+                        case 1: // i × j = k
+                            document.getElementById('ax').value = 1;
+                            document.getElementById('ay').value = 0;
+                            document.getElementById('az').value = 0;
+                            document.getElementById('bx').value = 0;
+                            document.getElementById('by').value = 1;
+                            document.getElementById('bz').value = 0;
+                            break;
+                        case 2: // Force example
+                            document.getElementById('ax').value = 2;
+                            document.getElementById('ay').value = 1;
+                            document.getElementById('az').value = 0;
+                            document.getElementById('bx').value = 1;
+                            document.getElementById('by').value = 2;
+                            document.getElementById('bz').value = 0;
+                            break;
+                        case 3: // Magnetic field example
+                            document.getElementById('ax').value = 1;
+                            document.getElementById('ay').value = 0;
+                            document.getElementById('az').value = 0;
+                            document.getElementById('bx').value = 0;
+                            document.getElementById('by').value = 0;
+                            document.getElementById('bz').value = 1;
+                            break;
+                    }
+                    calculateCrossProduct();
+                }
+                
+                function resetVectors() {
+                    document.getElementById('ax').value = 1;
+                    document.getElementById('ay').value = 0;
+                    document.getElementById('az').value = 0;
+                    document.getElementById('bx').value = 0;
+                    document.getElementById('by').value = 1;
+                    document.getElementById('bz').value = 0;
+                    calculateCrossProduct();
+                }
+                
+                // Add event listeners
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Initialize Three.js scene
+                    setTimeout(() => {
+                        initThreeJS();
+                    }, 100);
+                    
+                    const inputs = ['ax', 'ay', 'az', 'bx', 'by', 'bz'];
+                    inputs.forEach(id => {
+                        document.getElementById(id).addEventListener('input', calculateCrossProduct);
+                    });
+                    
+                    // Initial calculation after Three.js is initialized
+                    setTimeout(() => {
+                        calculateCrossProduct();
+                    }, 200);
+                });
+                </script>
+                
+                <h3 id="conversions">Useful Conversions</h3>
+                <div class="formula">
+                    <p>\(1\,\mathrm{eV} = 1.6 \times 10^{-19}~\mathrm{J}\)</p>
+                    <p>\(1\,\mathrm{u} = 1.661 \times 10^{-27}~\mathrm{Kg} = 931.49\,\mathrm{MeV}/c^2\)</p>
+                    <p>\(1\,\mathrm{Ci} = 3.7 \times 10^{10}~\mathrm{Bq}\)</p>
+                    <p>\(1\,\mathrm{rad} = 0.010~\mathrm{J/Kg}\)</p>
+                </div>
+                
+                <h3 id="relationships">Magnetic Fields</h3>
+                
+                <h4 id="magnetic-field-moving-charge">Magnetic Field of a Moving Charge</h4>
+                <div class="formula">
+                    <p>\(\vec{B} = \frac{\mu_0}{4\pi} \frac{q \vec{v} \times \hat{r}}{r^2} = \frac{\mu_0}{4\pi} \frac{I \vec{\Delta s} \times \hat{r}}{r^2}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(\vec{B}\) = magnetic field vector</li>
+                        <li>\(\mu_0\) = permeability of free space</li>
+                        <li>\(q\) = electric charge</li>
+                        <li>\(\vec{v}\) = velocity vector of the charge</li>
+                        <li>\(\hat{r}\) = unit vector pointing from the charge to the observation point</li>
+                        <li>\(r\) = distance from the charge to the observation point</li>
+                        <li>\(I\) = electric current</li>
+                        <li>\(\vec{\Delta s}\) = displacement vector along the current</li>
+                    </ul>
+                </div>
+                
+                <p>This formula, known as the Biot-Savart law, describes the magnetic field created by a moving charge or a current element. The magnetic field at any point in space depends on the charge's velocity, the distance from the charge, and the relative orientation.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A proton with charge \(1.6 \times 10^{-19}\) C moves with a velocity of \(2 \times 10^6\) m/s perpendicular to a line connecting it to an observation point 5 cm away. Calculate the magnetic field at the observation point.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using \(\vec{B} = \frac{\mu_0}{4\pi} \frac{q \vec{v} \times \hat{r}}{r^2}\):</p>
+                    <p>Since the velocity is perpendicular to the line connecting the charge to the observation point, \(|\vec{v} \times \hat{r}| = v\).</p>
+                    <p>\(|\vec{B}| = \frac{4\pi \times 10^{-7} \text{ Tm/A}}{4\pi} \frac{1.6 \times 10^{-19} \text{ C} \times 2 \times 10^6 \text{ m/s}}{(0.05 \text{ m})^2}\)</p>
+                    <p>\(|\vec{B}| = 10^{-7} \times \frac{3.2 \times 10^{-13}}{2.5 \times 10^{-3}} = 10^{-7} \times 1.28 \times 10^{-10} = 1.28 \times 10^{-17} \text{ T}\)</p>
+                </div>
+                
+                <h4 id="magnetic-field-wire">Magnetic Field of a Long Straight Wire</h4>
+                <div class="formula">
+                    <p>\(B_{\mathrm{wire}} = \frac{\mu_0}{2\pi} \frac{I}{d}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(B_{\mathrm{wire}}\) = magnetic field strength</li>
+                        <li>\(I\) = current in the wire</li>
+                        <li>\(d\) = distance from the wire</li>
+                    </ul>
+                </div>
+                
+                <p>This formula gives the magnitude of the magnetic field around a long, straight current-carrying wire. The field forms circular loops around the wire, with the direction determined by the right-hand rule: if the thumb points in the direction of the current, the fingers curl in the direction of the magnetic field.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A long, straight wire carries a current of 10 A. Calculate the magnetic field strength at a distance of 15 cm from the wire.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using \(B_{\mathrm{wire}} = \frac{\mu_0}{2\pi} \frac{I}{d}\):</p>
+                    <p>\(B_{\mathrm{wire}} = \frac{4\pi \times 10^{-7} \text{ Tm/A}}{2\pi} \frac{10 \text{ A}}{0.15 \text{ m}} = 2 \times 10^{-7} \times \frac{10}{0.15} = 2 \times 10^{-7} \times 66.67 = 1.33 \times 10^{-5} \text{ T}\)</p>
+                </div>
+                
+                <h4 id="magnetic-field-loop">Magnetic Field at the Center of a Current Loop</h4>
+                <div class="formula">
+                    <p>\(B_{\mathrm{loop}} = \frac{\mu_0}{2} \frac{IR^2}{(z^2+R^2)^{3/2}}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(B_{\mathrm{loop}}\) = magnetic field strength</li>
+                        <li>\(I\) = current in the loop</li>
+                        <li>\(R\) = radius of the loop</li>
+                        <li>\(z\) = distance along the axis from the center of the loop</li>
+                    </ul>
+                </div>
+                
+                <p>This formula describes the magnetic field along the axis of a circular current loop. At the center of the loop (z = 0), the formula simplifies to \(B_{\mathrm{center}} = \frac{\mu_0 I}{2R}\). The magnetic field is strongest at the center and decreases with distance along the axis.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A circular loop of wire with a radius of 5 cm carries a current of 2 A. Calculate the magnetic field at the center of the loop and at a point 10 cm along the axis from the center.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>1. At the center (z = 0):</p>
+                    <p>\(B_{\mathrm{center}} = \frac{\mu_0 I}{2R} = \frac{4\pi \times 10^{-7} \times 2}{2 \times 0.05} = \frac{8\pi \times 10^{-7}}{0.1} = 2.51 \times 10^{-5} \text{ T}\)</p>
+                    <p>2. At z = 10 cm = 0.1 m:</p>
+                    <p>\(B_{\mathrm{loop}} = \frac{\mu_0}{2} \frac{IR^2}{(z^2+R^2)^{3/2}} = \frac{4\pi \times 10^{-7}}{2} \frac{2 \times (0.05)^2}{((0.1)^2+(0.05)^2)^{3/2}}\)</p>
+                    <p>\(B_{\mathrm{loop}} = 2\pi \times 10^{-7} \times \frac{2 \times 0.0025}{(0.01+0.0025)^{3/2}} = 2\pi \times 10^{-7} \times \frac{0.005}{(0.0125)^{3/2}}\)</p>
+                    <p>\(B_{\mathrm{loop}} = 2\pi \times 10^{-7} \times \frac{0.005}{0.0014} = 2\pi \times 10^{-7} \times 3.57 = 2.24 \times 10^{-6} \text{ T}\)</p>
+                </div>
+                
+                <h4 id="magnetic-field-dipole">Magnetic Field of a Dipole</h4>
+                <div class="formula">
+                    <p>\(B_{\mathrm{dipole}} = \frac{\mu_0}{4\pi} \frac{2\mu}{z^3} \hspace{10pt} \mu = (AI)\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(B_{\mathrm{dipole}}\) = magnetic field strength</li>
+                        <li>\(\mu\) = magnetic dipole moment</li>
+                        <li>\(A\) = area of the current loop</li>
+                        <li>\(I\) = current</li>
+                        <li>\(z\) = distance along the axis from the dipole</li>
+                    </ul>
+                </div>
+                
+                <p>A magnetic dipole is a system with a magnetic north and south pole separated by a small distance. Current loops, bar magnets, and even subatomic particles like electrons can behave as magnetic dipoles. This formula gives the magnetic field along the axis of a dipole at a distance much larger than the size of the dipole.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A circular current loop with a radius of 2 cm carries a current of 5 A. Calculate the magnetic field along the axis at a distance of 20 cm from the center of the loop, treating it as a magnetic dipole.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>First, calculate the magnetic dipole moment: \(\mu = AI = \pi R^2 I = \pi \times (0.02 \text{ m})^2 \times 5 \text{ A} = \pi \times 0.0004 \times 5 = 0.00628 \text{ A·m}^2\)</p>
+                    <p>Now calculate the magnetic field using the dipole formula:</p>
+                    <p>\(B_{\mathrm{dipole}} = \frac{\mu_0}{4\pi} \frac{2\mu}{z^3} = \frac{4\pi \times 10^{-7}}{4\pi} \frac{2 \times 0.00628}{(0.2)^3} = 10^{-7} \times \frac{0.01256}{0.008} = 10^{-7} \times 1.57 = 1.57 \times 10^{-7} \text{ T}\)</p>
+                    <p>Note: This approximation is valid because z (20 cm) is much larger than the loop radius (2 cm).</p>
+                </div>
+                
+                <h3 id="magnetic-forces">Magnetic Forces</h3>
+                
+                <h4 id="force-moving-charge">Magnetic Force on a Moving Charge</h4>
+                <div class="formula">
+                    <p>\(\vec{F} = q\vec{v} \times \vec{B}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(\vec{F}\) = force vector</li>
+                        <li>\(q\) = electric charge</li>
+                        <li>\(\vec{v}\) = velocity vector of the charge</li>
+                        <li>\(\vec{B}\) = magnetic field vector</li>
+                    </ul>
+                </div>
+                
+                <p>This formula, known as the Lorentz force law, describes the force experienced by a charged particle moving through a magnetic field. The force is perpendicular to both the velocity of the charge and the magnetic field. The magnitude of the force is given by \(F = |q|vB\sin\theta\), where \(\theta\) is the angle between the velocity and magnetic field vectors.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> An electron (charge \(-1.6 \times 10^{-19}\) C) moves with a velocity of \(5 \times 10^6\) m/s perpendicular to a uniform magnetic field of strength 0.2 T. Calculate the magnetic force on the electron and the radius of its circular path if its mass is \(9.11 \times 10^{-31}\) kg.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>1. Magnetic force:</p>
+                    <p>Since the velocity is perpendicular to the magnetic field, \(\sin\theta = \sin 90° = 1\).</p>
+                    <p>\(F = |q|vB\sin\theta = |{-1.6 \times 10^{-19}}| \times 5 \times 10^6 \times 0.2 \times 1 = 1.6 \times 10^{-13} \text{ N}\)</p>
+                    <p>2. Radius of the circular path:</p>
+                    <p>In a uniform magnetic field, a charged particle moves in a circular path with radius \(r = \frac{mv}{|q|B}\).</p>
+                    <p>\(r = \frac{9.11 \times 10^{-31} \times 5 \times 10^6}{1.6 \times 10^{-19} \times 0.2} = \frac{4.555 \times 10^{-24}}{3.2 \times 10^{-20}} = 1.42 \times 10^{-4} \text{ m} = 0.142 \text{ mm}\)</p>
+                </div>
+                
+                <h4 id="force-current-wire">Magnetic Force on a Current-Carrying Wire</h4>
+                <div class="formula">
+                    <p>\(\vec{F} = I \vec{l} \times \vec{B}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(\vec{F}\) = force vector</li>
+                        <li>\(I\) = current in the wire</li>
+                        <li>\(\vec{l}\) = length vector along the direction of the current</li>
+                        <li>\(\vec{B}\) = magnetic field vector</li>
+                    </ul>
+                </div>
+                
+                <p>This formula describes the force experienced by a current-carrying wire in a magnetic field. The force is perpendicular to both the wire and the magnetic field. The magnitude of the force is given by \(F = IlB\sin\theta\), where \(\theta\) is the angle between the wire and the magnetic field.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A straight wire of length 25 cm carries a current of 3 A. The wire is placed in a uniform magnetic field of 0.5 T, making an angle of 30° with the field. Calculate the magnetic force on the wire.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using \(F = IlB\sin\theta\):</p>
+                    <p>\(F = 3 \text{ A} \times 0.25 \text{ m} \times 0.5 \text{ T} \times \sin 30° = 3 \times 0.25 \times 0.5 \times 0.5 = 0.1875 \text{ N}\)</p>
+                    <p>The force of 0.1875 N acts perpendicular to both the wire and the magnetic field.</p>
+                </div>
+                
+                <h4 id="force-parallel-wires">Force Between Parallel Current-Carrying Wires</h4>
+                <div class="formula">
+                    <p>\(F_{\text{parallel wires}} = I_1 L B_2 = I_1 L \frac{\mu_0 I_2}{2\pi d} = \frac{\mu_0 L I_1 I_2}{2\pi d}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(F_{\text{parallel wires}}\) = force between the wires</li>
+                        <li>\(I_1, I_2\) = currents in the wires</li>
+                        <li>\(L\) = length of the wire segment</li>
+                        <li>\(d\) = distance between the wires</li>
+                    </ul>
+                </div>
+                
+                <p>This formula describes the magnetic force between two parallel current-carrying wires. The wires attract each other if the currents flow in the same direction and repel if the currents flow in opposite directions. This principle is used in the definition of the ampere, the SI unit of electric current.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> Two parallel wires are separated by a distance of 5 cm. The wires carry currents of 8 A and 12 A in the same direction. Calculate the force per meter of wire length.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using \(F_{\text{parallel wires}} = \frac{\mu_0 L I_1 I_2}{2\pi d}\):</p>
+                    <p>\(F = \frac{4\pi \times 10^{-7} \times 1 \times 8 \times 12}{2\pi \times 0.05} = \frac{4\pi \times 10^{-7} \times 96}{2\pi \times 0.05} = \frac{38.4 \times 10^{-7}}{0.1\pi} = \frac{38.4 \times 10^{-6}}{\pi} \approx 1.22 \times 10^{-5} \text{ N/m}\)</p>
+                    <p>Since the currents flow in the same direction, the wires attract each other with a force of approximately \(1.22 \times 10^{-5}\) N per meter of length.</p>
+                </div>
+                
+                <h3 id="right-hand-rules">Right-Hand Rules in Electromagnetism</h3>
+                <p>Right-hand rules are important mnemonic devices used to determine the directions of vectors in electromagnetism. These rules help visualize the relationships between current, magnetic fields, and related quantities.</p>
+                
+                <h4 id="current-field-rule">Right-Hand Rule for Current and Magnetic Field</h4>
+                <div class="formula">
+                    <p><strong>Right-Hand Rule for a Current-Carrying Wire:</strong></p>
+                    <p>If you grab a wire with your right hand such that your thumb points in the direction of the current (I), your curled fingers indicate the direction of the magnetic field (B) around the wire.</p>
+                </div>
+                
+                <div class="row mb-4">
+                    <div class="col-md-8 mx-auto text-center">
+                        <img src="RHR_MF.png?v=2" alt="Right-hand rule for current and magnetic field" class="img-fluid rounded shadow" style="max-width: 80%;">
+                        <p class="mt-2"><em>The right-hand rule showing the relationship between current (I) and the resulting magnetic field (B).</em></p>
+                    </div>
+                </div>
+                
+                <p>This right-hand rule is the foundation for understanding how current-carrying wires generate magnetic fields. It illustrates that magnetic field lines form concentric circles around a straight current-carrying wire, with the direction determined by the right hand.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A straight wire carries a current flowing upward. Using the right-hand rule, determine the direction of the magnetic field at points to the east, west, north, and south of the wire.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using the right-hand rule with thumb pointing upward (direction of current):</p>
+                    <ul>
+                        <li>At a point east of the wire: The magnetic field points south (toward you)</li>
+                        <li>At a point west of the wire: The magnetic field points north (away from you)</li>
+                        <li>At a point north of the wire: The magnetic field points west (to the right)</li>
+                        <li>At a point south of the wire: The magnetic field points east (to the left)</li>
+                    </ul>
+                    <p>This confirms that the magnetic field forms concentric circles around the wire in a counterclockwise direction when viewed from above (looking in the direction of the current).</p>
+                </div>
+                
+                <h4 id="ivb-rule">Right-Hand Rule for Current, Velocity, and Magnetic Field</h4>
+                <div class="formula">
+                    <p><strong>I-V-B Right-Hand Rule:</strong></p>
+                    <p>Point your right hand with your thumb, index finger, and middle finger mutually perpendicular to each other (forming three axes of a coordinate system):</p>
+                    <ul>
+                        <li>Thumb: Direction of the current (I) or motion of positive charges</li>
+                        <li>Index finger: Direction of the external magnetic field (B)</li>
+                        <li>Middle finger: Direction of the resulting force or voltage (V)</li>
+                    </ul>
+                </div>
+                
+                <div class="row mb-4">
+                    <div class="col-md-8 mx-auto text-center">
+                        <img src="RHR_IVB.png" alt="Right-hand rule for current, magnetic field, and force" class="img-fluid rounded shadow" style="max-width: 80%;">
+                        <p class="mt-2"><em>The I-V-B right-hand rule showing the relationship between current direction (I), magnetic field direction (B), and the resulting force or voltage (V).</em></p>
+                    </div>
+                </div>
+                
+                <p>This right-hand rule is useful for determining the direction of:</p>
+                <ul>
+                    <li>The force on a current-carrying wire in a magnetic field</li>
+                    <li>The force on a moving charged particle in a magnetic field</li>
+                    <li>The induced voltage in a conductor moving through a magnetic field</li>
+                </ul>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A horizontal wire carries a current flowing east and is placed in a vertical magnetic field pointing downward. Using the right-hand rule, determine the direction of the force on the wire.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using the I-V-B right-hand rule:</p>
+                    <ul>
+                        <li>Thumb (I): Points east (direction of current)</li>
+                        <li>Index finger (B): Points downward (direction of magnetic field)</li>
+                        <li>Middle finger (V/F): To maintain perpendicularity with both I and B, the middle finger points north (direction of force)</li>
+                    </ul>
+                    <p>Therefore, the wire experiences a force in the northward direction. This can be verified using the formula \(\vec{F} = I \vec{l} \times \vec{B}\).</p>
+                </div>
+                
+                <p>Understanding these right-hand rules is essential for solving problems involving electromagnetic interactions and for visualizing the three-dimensional relationships between electrical and magnetic quantities.</p>
+                
+                <h4 id="charged-particle">Charged Particle in a Magnetic Field</h4>
+                <div class="formula">
+                    <p>\(r = \frac{mv}{qB} \qquad f = \frac{q B}{2\pi m}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(r\) = radius of the circular path</li>
+                        <li>\(m\) = mass of the particle</li>
+                        <li>\(v\) = velocity of the particle</li>
+                        <li>\(q\) = charge of the particle</li>
+                        <li>\(B\) = magnetic field strength</li>
+                        <li>\(f\) = frequency of revolution</li>
+                    </ul>
+                </div>
+                
+                <h4 id="harmonic-motion">Simple Harmonic Motion Equations</h4>
+                <div class="formula">
+                    <p>\(x(t) = A \cos (\omega t + \phi_0)\)</p>
+                    <p>\(v_x(t) = -\omega A \sin (\omega t + \phi_0) = -v_{\max} \sin (\omega t + \phi_0)\)</p>
+                    <p>\(v_{\max} = \frac{2\pi A}{T} = 2\pi f A = \omega A\)</p>
+                    <p>\(a_x(t) = -\omega^2 A \cos (\omega t + \phi_0) = -a_{\max} \cos (\omega t + \phi_0)\)</p>
+                    <p>\(\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{g}{L}} \qquad f = \frac{\omega}{2\pi} \qquad T = \frac{1}{f}\)</p>
+                    <p>\(E = K + U = \frac{1}{2}mv_x^2 + \frac{1}{2}k x^2 = \frac{1}{2} k A^2 = \frac{1}{2}m (v_{\max})^2\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(x(t)\) = position as a function of time</li>
+                        <li>\(A\) = amplitude (maximum displacement from equilibrium)</li>
+                        <li>\(\omega\) = angular frequency (radians per second)</li>
+                        <li>\(t\) = time</li>
+                        <li>\(\phi_0\) = initial phase constant</li>
+                        <li>\(v_x(t)\) = velocity as a function of time</li>
+                        <li>\(v_{\max}\) = maximum velocity</li>
+                        <li>\(a_x(t)\) = acceleration as a function of time</li>
+                        <li>\(a_{\max}\) = maximum acceleration</li>
+                        <li>\(k\) = spring constant</li>
+                        <li>\(m\) = mass</li>
+                        <li>\(g\) = acceleration due to gravity</li>
+                        <li>\(L\) = length (for a pendulum)</li>
+                        <li>\(f\) = frequency (oscillations per second)</li>
+                        <li>\(T\) = period (time for one complete oscillation)</li>
+                        <li>\(E\) = total energy</li>
+                        <li>\(K\) = kinetic energy</li>
+                        <li>\(U\) = potential energy</li>
+                    </ul>
+                </div>
+                
+                <p>Simple harmonic motion (SHM) is a type of periodic motion where the restoring force is directly proportional to the displacement and acts in the direction opposite to that of displacement. Examples include a mass on a spring and a simple pendulum (for small angles).</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A 0.2 kg mass attached to a spring with spring constant 8 N/m oscillates with an amplitude of 0.1 m. Calculate:</p>
+                    <ol>
+                        <li>The angular frequency</li>
+                        <li>The period and frequency</li>
+                        <li>The maximum velocity</li>
+                        <li>The total energy</li>
+                    </ol>
+                    <p><strong>Solution:</strong></p>
+                    <p>1. Angular frequency: \(\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{8 \text{ N/m}}{0.2 \text{ kg}}} = \sqrt{40} \approx 6.32 \text{ rad/s}\)</p>
+                    <p>2. Period: \(T = \frac{2\pi}{\omega} = \frac{2\pi}{6.32} \approx 0.99 \text{ s}\)</p>
+                    <p>   Frequency: \(f = \frac{1}{T} = \frac{1}{0.99} \approx 1.01 \text{ Hz}\)</p>
+                    <p>3. Maximum velocity: \(v_{\max} = \omega A = 6.32 \times 0.1 = 0.632 \text{ m/s}\)</p>
+                    <p>4. Total energy: \(E = \frac{1}{2}kA^2 = \frac{1}{2} \times 8 \times (0.1)^2 = 0.04 \text{ J}\)</p>
+                </div>
+                
+                <h4 id="waves">Wave Phenomena</h4>
+                <div class="formula">
+                    <p>\(I = \frac{P}{A}\)</p>
+                    <p>\(v_{\text{string}} = \sqrt{\frac{T_s}{\mu}}\)</p>
+                    <p>\(\beta = (10\ \mathrm{dB}) \log_{10} \left( \frac{I}{1 \times 10^{-12}} \right)\)</p>
+                    <p>\(v = \lambda f \qquad \omega = 2\pi f = \frac{2\pi}{T} \qquad k = \frac{2\pi}{\lambda}\)</p>
+                    <p>\(D(x,t) = A \sin (kx - \omega t + \phi_0)\)</p>
+                    <p>\(\Delta \phi = 2\pi \frac{\Delta x}{\lambda} + \Delta \phi_0\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(I\) = intensity (power per unit area)</li>
+                        <li>\(P\) = power</li>
+                        <li>\(A\) = area</li>
+                        <li>\(v_{\text{string}}\) = wave speed on a string</li>
+                        <li>\(T_s\) = tension in the string</li>
+                        <li>\(\mu\) = linear mass density (mass per unit length)</li>
+                        <li>\(\beta\) = sound intensity level in decibels</li>
+                        <li>\(v\) = wave speed</li>
+                        <li>\(\lambda\) = wavelength</li>
+                        <li>\(f\) = frequency</li>
+                        <li>\(\omega\) = angular frequency</li>
+                        <li>\(T\) = period</li>
+                        <li>\(k\) = wave number</li>
+                        <li>\(D(x,t)\) = displacement as a function of position and time</li>
+                        <li>\(A\) = amplitude</li>
+                        <li>\(\phi_0\) = initial phase</li>
+                        <li>\(\Delta \phi\) = phase difference</li>
+                        <li>\(\Delta x\) = path difference</li>
+                    </ul>
+                </div>
+                
+                <p>Wave phenomena describe how disturbances propagate through a medium or space. This includes mechanical waves (like sound and water waves) and electromagnetic waves (like light).</p>
+                
+                <div class="example">
+                    <p><strong>Example 1:</strong> A string with a linear mass density of 0.01 kg/m is under a tension of 40 N. Calculate the speed of a wave on this string.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using the formula for wave speed on a string: \(v_{\text{string}} = \sqrt{\frac{T_s}{\mu}}\)</p>
+                    <p>\(v_{\text{string}} = \sqrt{\frac{40 \text{ N}}{0.01 \text{ kg/m}}} = \sqrt{4000} \approx 63.2 \text{ m/s}\)</p>
+                    
+                    <p><strong>Example 2:</strong> A sound wave has a frequency of 440 Hz and a speed of 343 m/s. Calculate its wavelength and wave number.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Wavelength: \(\lambda = \frac{v}{f} = \frac{343 \text{ m/s}}{440 \text{ Hz}} \approx 0.78 \text{ m}\)</p>
+                    <p>Wave number: \(k = \frac{2\pi}{\lambda} = \frac{2\pi}{0.78} \approx 8.05 \text{ rad/m}\)</p>
+                </div>
+                
+                <h4 id="doppler">Doppler Effect</h4>
+                <div class="formula">
+                    <p>\(f_+ = f_0 \frac{v+v_0}{v} \qquad f_- = f_0 \frac{v-v_0}{v}\)</p>
+                    <p>\(f_+ = (1+\frac{v_0}{v}) f_0 \qquad f_- = (1-\frac{v_0}{v}) f_0\)</p>
+                    <p>\(f_{\text{observed}} = f_0 \frac{1+v_0/v}{1-v_s/v}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(f_+\) = observed frequency when source and observer move toward each other</li>
+                        <li>\(f_-\) = observed frequency when source and observer move away from each other</li>
+                        <li>\(f_0\) = source frequency (emitted frequency)</li>
+                        <li>\(v\) = wave speed in the medium</li>
+                        <li>\(v_0\) = observer velocity relative to the medium (positive when moving toward the source)</li>
+                        <li>\(v_s\) = source velocity relative to the medium (positive when moving toward the observer)</li>
+                        <li>\(f_{\text{observed}}\) = frequency observed in the general case</li>
+                    </ul>
+                </div>
+                
+                <p>The Doppler effect is the change in frequency of a wave in relation to an observer moving relative to the wave source. It occurs for all types of waves, including sound waves and electromagnetic waves like light.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A police car with a siren emitting a sound at 500 Hz is moving at 25 m/s toward a stationary observer. The speed of sound in air is 343 m/s. Calculate the frequency heard by the observer.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>In this case, the observer is stationary (\(v_0 = 0\)) and the source is moving toward the observer at \(v_s = 25 \text{ m/s}\).</p>
+                    <p>Using the general Doppler formula: \(f_{\text{observed}} = f_0 \frac{1+v_0/v}{1-v_s/v}\)</p>
+                    <p>\(f_{\text{observed}} = 500 \text{ Hz} \times \frac{1+0}{1-25/343} = 500 \text{ Hz} \times \frac{1}{1-0.073} = 500 \text{ Hz} \times \frac{1}{0.927} \approx 539 \text{ Hz}\)</p>
+                    <p>The observer hears a higher frequency (539 Hz) than the emitted frequency (500 Hz), which is the characteristic of the Doppler effect when a source approaches an observer.</p>
+                </div>
+                
+                <h4 id="standing-waves">Standing Waves</h4>
+                <div class="formula">
+                    <p>\(D(x, t) = A(x) \cos \omega t\)</p>
+                    <p>\(A(x) = 2a \sin kx\)</p>
+                    <p>\(\lambda_m = \frac{2L}{m} \qquad m=1,2,3,4\dots\)</p>
+                    <p>\(D_m = [2a \cos (\Delta \phi / 2)] \sin (k x_{\text{avg}} - \omega t + (\phi_0)_{\text{avg}})\)</p>
+                    <p>\(f_m = \frac{v}{\lambda_m} = \frac{v m}{2L},\quad m=1,2,3,4\dots\)</p>
+                    <p>\(\lambda_m = \frac{4L}{m},~m=1,3,5,7\dots\)</p>
+                    <p>\(f_m = \frac{m v}{4L} = m f_1\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(D(x,t)\) = displacement of the standing wave as a function of position and time</li>
+                        <li>\(A(x)\) = amplitude as a function of position</li>
+                        <li>\(a\) = maximum amplitude of the constituent traveling waves</li>
+                        <li>\(\omega\) = angular frequency</li>
+                        <li>\(t\) = time</li>
+                        <li>\(k\) = wave number</li>
+                        <li>\(x\) = position along the wave</li>
+                        <li>\(\lambda_m\) = wavelength of the mth harmonic (mode)</li>
+                        <li>\(L\) = length of the medium (string, pipe, etc.)</li>
+                        <li>\(m\) = mode number (integer)</li>
+                        <li>\(D_m\) = displacement for mode m</li>
+                        <li>\(\Delta \phi\) = phase difference</li>
+                        <li>\(x_{\text{avg}}\) = average position</li>
+                        <li>\((\phi_0)_{\text{avg}}\) = average initial phase</li>
+                        <li>\(f_m\) = frequency of the mth harmonic</li>
+                        <li>\(v\) = wave speed</li>
+                        <li>\(f_1\) = fundamental frequency (first harmonic)</li>
+                    </ul>
+                </div>
+                
+                <p>Standing waves are formed when two waves of the same frequency traveling in opposite directions interfere with each other. They appear to stand still, with fixed positions of zero displacement (nodes) and maximum displacement (antinodes). Standing waves are fundamental in understanding musical instruments, resonance, and quantum mechanics.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A guitar string is 65 cm long and fixed at both ends. The wave speed on the string is 240 m/s.</p>
+                    <ol>
+                        <li>Calculate the frequencies of the first three harmonics (modes).</li>
+                        <li>What are the wavelengths of these harmonics?</li>
+                    </ol>
+                    <p><strong>Solution:</strong></p>
+                    <p>For a string fixed at both ends, we use the formula: \(f_m = \frac{v m}{2L}\) and \(\lambda_m = \frac{2L}{m}\)</p>
+                    <p>With \(L = 0.65 \text{ m}\) and \(v = 240 \text{ m/s}\):</p>
+                    <p>1. First harmonic (m = 1):</p>
+                    <p>   \(f_1 = \frac{240 \times 1}{2 \times 0.65} = \frac{240}{1.3} \approx 184.6 \text{ Hz}\)</p>
+                    <p>   \(\lambda_1 = \frac{2 \times 0.65}{1} = 1.3 \text{ m}\)</p>
+                    <p>2. Second harmonic (m = 2):</p>
+                    <p>   \(f_2 = \frac{240 \times 2}{2 \times 0.65} = \frac{480}{1.3} \approx 369.2 \text{ Hz}\)</p>
+                    <p>   \(\lambda_2 = \frac{2 \times 0.65}{2} = 0.65 \text{ m}\)</p>
+                    <p>3. Third harmonic (m = 3):</p>
+                    <p>   \(f_3 = \frac{240 \times 3}{2 \times 0.65} = \frac{720}{1.3} \approx 553.8 \text{ Hz}\)</p>
+                    <p>   \(\lambda_3 = \frac{2 \times 0.65}{3} \approx 0.433 \text{ m}\)</p>
+                </div>
+                
+                <h4 id="diffraction">Diffraction and Interference</h4>
+                <div class="formula">
+                    <p>\(\theta_m = m \frac{\lambda}{d}\)</p>
+                    <p>\(y_m = m \frac{\lambda L}{d}\)</p>
+                    <p>\(\theta'_m = \left(m+\frac{1}{2}\right) \frac{\lambda}{d}\)</p>
+                    <p>\(y'_m = \left(m+\frac{1}{2}\right) \frac{\lambda L}{d}\)</p>
+                    <p>\(d \sin \theta_m = m\lambda,~y_m = L \tan \theta_m, \quad m = 0,1,2,3,4\)</p>
+                    <p>\(a \sin \theta_m = m\lambda,\quad m=1,2,3,4\)</p>
+                    <p>\(\sin\theta_1 = 1.22 \frac{\lambda}{D}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(\theta_m\) = angle to the mth constructive interference maximum (bright fringe)</li>
+                        <li>\(\theta'_m\) = angle to the mth destructive interference minimum (dark fringe)</li>
+                        <li>\(m\) = order of maximum/minimum (integer)</li>
+                        <li>\(\lambda\) = wavelength of light</li>
+                        <li>\(d\) = separation between slits or sources</li>
+                        <li>\(y_m\) = linear distance from central maximum to mth bright fringe on a screen</li>
+                        <li>\(y'_m\) = linear distance from central maximum to mth dark fringe on a screen</li>
+                        <li>\(L\) = distance from slits to screen</li>
+                        <li>\(a\) = width of a single slit</li>
+                        <li>\(D\) = diameter of circular aperture</li>
+                    </ul>
+                </div>
+                
+                <p>Diffraction is the bending of waves around obstacles or through openings, while interference is the superposition of waves resulting in a new wave pattern. These phenomena are key to understanding the wave nature of light and other waves.</p>
+                
+                <div class="example">
+                    <p><strong>Example 1 (Double-slit interference):</strong> Light with a wavelength of 550 nm passes through two slits separated by 0.1 mm. The interference pattern is observed on a screen 2 m away. Calculate the positions of the first three bright fringes (maxima) from the central maximum.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using the formula \(y_m = m \frac{\lambda L}{d}\) where:</p>
+                    <p>\(\lambda = 550 \times 10^{-9} \text{ m}\)</p>
+                    <p>\(L = 2 \text{ m}\)</p>
+                    <p>\(d = 0.1 \times 10^{-3} \text{ m}\)</p>
+                    <p>First maximum (m = 1): \(y_1 = 1 \times \frac{550 \times 10^{-9} \times 2}{0.1 \times 10^{-3}} = 0.011 \text{ m} = 11 \text{ mm}\)</p>
+                    <p>Second maximum (m = 2): \(y_2 = 2 \times \frac{550 \times 10^{-9} \times 2}{0.1 \times 10^{-3}} = 0.022 \text{ m} = 22 \text{ mm}\)</p>
+                    <p>Third maximum (m = 3): \(y_3 = 3 \times \frac{550 \times 10^{-9} \times 2}{0.1 \times 10^{-3}} = 0.033 \text{ m} = 33 \text{ mm}\)</p>
+                    
+                    <p><strong>Example 2 (Single-slit diffraction):</strong> Light with a wavelength of 650 nm passes through a single slit of width 0.05 mm. Calculate the angle to the first minimum in the diffraction pattern.</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>For a single slit, the minima occur at angles given by \(a \sin \theta_m = m\lambda\) for \(m = 1, 2, 3, ...\)</p>
+                    <p>For the first minimum (m = 1):</p>
+                    <p>\(\sin \theta_1 = \frac{1 \times 650 \times 10^{-9}}{0.05 \times 10^{-3}} = 0.013\)</p>
+                    <p>\(\theta_1 = \sin^{-1}(0.013) \approx 0.75°\)</p>
+                </div>
+                
+                <h4 id="optics">Optics</h4>
+                <div class="formula">
+                    <p>\(n_1 \sin \theta_1 = n_2 \sin \theta_2\)</p>
+                    <p>\(\theta_c = \sin^{-1} \left( \frac{n_2}{n_1} \right)\)</p>
+                    <p>\(n = \frac{c}{v}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(n_1\) = refractive index of medium 1</li>
+                        <li>\(n_2\) = refractive index of medium 2</li>
+                        <li>\(\theta_1\) = angle of incidence</li>
+                        <li>\(\theta_2\) = angle of refraction</li>
+                        <li>\(\theta_c\) = critical angle for total internal reflection</li>
+                        <li>\(n\) = refractive index of a medium</li>
+                        <li>\(c\) = speed of light in vacuum</li>
+                        <li>\(v\) = speed of light in the medium</li>
+                    </ul>
+                </div>
+                
+                <p>Optics is the branch of physics that studies the behavior of light, including its interactions with matter and the construction of instruments that use or detect it. The formulas above describe refraction (Snell's Law), total internal reflection, and the definition of refractive index.</p>
+                
+                <div class="example">
+                    <p><strong>Example 1 (Refraction):</strong> Light travels from air (n₁ = 1.00) into water (n₂ = 1.33). If the angle of incidence is 45°, what is the angle of refraction?</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using Snell's Law: \(n_1 \sin \theta_1 = n_2 \sin \theta_2\)</p>
+                    <p>\(1.00 \times \sin 45° = 1.33 \times \sin \theta_2\)</p>
+                    <p>\(\sin \theta_2 = \frac{1.00 \times \sin 45°}{1.33} = \frac{0.7071}{1.33} \approx 0.5317\)</p>
+                    <p>\(\theta_2 = \sin^{-1}(0.5317) \approx 32.1°\)</p>
+                    
+                    <p><strong>Example 2 (Total Internal Reflection):</strong> Calculate the critical angle for light traveling from water (n₁ = 1.33) to air (n₂ = 1.00).</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using the formula for critical angle: \(\theta_c = \sin^{-1} \left( \frac{n_2}{n_1} \right)\)</p>
+                    <p>\(\theta_c = \sin^{-1} \left( \frac{1.00}{1.33} \right) = \sin^{-1}(0.7519) \approx 48.6°\)</p>
+                    <p>This means that if light hits the water-air boundary at an angle greater than 48.6° from the normal, total internal reflection will occur.</p>
+                </div>
+                
+                <h4 id="nuclear">Nuclear Physics</h4>
+                <div class="formula">
+                    <p>\(B = \left[Z m_{^1\mathrm{H}} + N m_n - m_{\text{atom}}\right] \times (931.494~\mathrm{MeV/u})\)</p>
+                    <p>\(A = A_0 e^{-\lambda t} = A_0 e^{- t / \tau}\)</p>
+                    <p>\(N = N_0 e^{-\lambda t} = N_0 e^{- t / \tau} = N_0 \left( \frac{1}{2} \right)^{t/t_{1/2}}\)</p>
+                    <p>\(t_{1/2} = \frac{\ln 2}{\lambda},\quad \tau = \frac{1}{\lambda}\)</p>
+                    <p>\(R = r_0 A^{1/3}\)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\(B\) = binding energy of the nucleus</li>
+                        <li>\(Z\) = atomic number (number of protons)</li>
+                        <li>\(N\) = number of neutrons</li>
+                        <li>\(m_{^1\mathrm{H}}\) = mass of a hydrogen atom</li>
+                        <li>\(m_n\) = mass of a neutron</li>
+                        <li>\(m_{\text{atom}}\) = actual mass of the atom</li>
+                        <li>\(A\) = activity (number of decays per second)</li>
+                        <li>\(A_0\) = initial activity</li>
+                        <li>\(\lambda\) = decay constant</li>
+                        <li>\(t\) = time</li>
+                        <li>\(\tau\) = mean lifetime</li>
+                        <li>\(N\) = number of undecayed nuclei</li>
+                        <li>\(N_0\) = initial number of nuclei</li>
+                        <li>\(t_{1/2}\) = half-life (time for half the nuclei to decay)</li>
+                        <li>\(R\) = nuclear radius</li>
+                        <li>\(r_0\) = constant (approximately 1.2 × 10⁻¹⁵ m)</li>
+                        <li>\(A\) = mass number (number of nucleons = Z + N)</li>
+                    </ul>
+                </div>
+                
+                <p>Nuclear physics studies the components, structure, and behavior of atomic nuclei. The formulas above relate to nuclear binding energy, radioactive decay, and nuclear size.</p>
+                
+                <div class="example">
+                    <p><strong>Example 1 (Radioactive Decay):</strong> A radioactive sample has an initial activity of 800 Bq and a half-life of 5 hours. Calculate:</p>
+                    <ol>
+                        <li>The decay constant</li>
+                        <li>The activity after 15 hours</li>
+                    </ol>
+                    <p><strong>Solution:</strong></p>
+                    <p>1. Decay constant: \(\lambda = \frac{\ln 2}{t_{1/2}} = \frac{\ln 2}{5 \text{ h}} = \frac{0.693}{5} \approx 0.1386 \text{ h}^{-1}\)</p>
+                    <p>2. Activity after 15 hours: \(A = A_0 e^{-\lambda t} = 800 \text{ Bq} \times e^{-0.1386 \times 15} = 800 \text{ Bq} \times e^{-2.079} = 800 \text{ Bq} \times 0.125 = 100 \text{ Bq}\)</p>
+                    <p>Alternatively, we can use the half-life formula: \(A = A_0 \left( \frac{1}{2} \right)^{t/t_{1/2}} = 800 \text{ Bq} \times \left( \frac{1}{2} \right)^{15/5} = 800 \text{ Bq} \times \left( \frac{1}{2} \right)^3 = 800 \text{ Bq} \times \frac{1}{8} = 100 \text{ Bq}\)</p>
+                    
+                    <p><strong>Example 2 (Nuclear Radius):</strong> Calculate the radius of a uranium-238 nucleus (A = 238).</p>
+                    <p><strong>Solution:</strong></p>
+                    <p>Using the formula: \(R = r_0 A^{1/3}\) with \(r_0 = 1.2 \times 10^{-15} \text{ m}\) and \(A = 238\):</p>
+                    <p>\(R = 1.2 \times 10^{-15} \times 238^{1/3} = 1.2 \times 10^{-15} \times 6.18 = 7.42 \times 10^{-15} \text{ m} = 7.42 \text{ fm}\)</p>
+                </div>
+                
+                <h3 id="applications">Applications of Magnetism</h3>
+                <p>Magnetism has numerous practical applications in our daily lives and in technology:</p>
+                <ul>
+                    <li>Electric motors and generators</li>
+                    <li>Magnetic resonance imaging (MRI) in medicine</li>
+                    <li>Magnetic storage devices (hard drives)</li>
+                    <li>Electromagnetic induction for power generation</li>
+                    <li>Magnetic levitation for transportation</li>
+                    <li>Particle accelerators in research</li>
+                </ul>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> Calculate the magnetic field 5 cm from a wire carrying a current of 2 A.</p>
+                    <p>Using \(B = \frac{\mu_0 I}{2\pi d}\):</p>
+                    <p>\(B = \frac{4\pi \times 10^{-7} \times 2}{2\pi \times 0.05} = \frac{8\pi \times 10^{-7}}{2\pi \times 0.05} = \frac{4 \times 10^{-7}}{0.05} = 8 \times 10^{-6}\) T</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-primary back-to-top" id="backToTop">↑</button>
+
+    <!-- Footer -->
+    <footer style="height: 10%;">
+        <div class="container">
+            <!-- Footer content removed as requested -->
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    
+    <!-- Cal floating-popup embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "60-minute-online-paid-session-50", {origin:"https://cal.com"});
+
+      Cal.ns["60-minute-online-paid-session-50"]("floatingButton", {"calLink":"jakobstrozberg/60-minute-online-paid-session-50","config":{"layout":"month_view"},"buttonText":"Book an Online Tutoring Session"}); 
+      Cal.ns["60-minute-online-paid-session-50"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal floating-popup embed code ends -->
+</body>
+</html> 

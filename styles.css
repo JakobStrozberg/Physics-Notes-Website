@@ -1,0 +1,571 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e293b;
+    --accent-color: #3b82f6;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Keep only the booking section colors */
+    --booking-bg: #f3e8ff;
+    --booking-accent: #9333ea;
+}
+
+/* Simple dark mode using color inversion */
+[data-theme="dark"] {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* Prevent double inversion for images and videos */
+[data-theme="dark"] img,
+[data-theme="dark"] video,
+[data-theme="dark"] iframe {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1100;
+    background-color: var(--bg-white);
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.theme-toggle i {
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle span {
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.theme-toggle .fa-moon {
+    display: block;
+}
+
+.theme-toggle .fa-sun {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .fa-moon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .fa-sun {
+    display: block;
+}
+
+/* Smooth transition for theme changes */
+html {
+    transition: filter 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-white);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Sidebar styling */
+#sidebar {
+    width: 280px;
+    background-color: var(--bg-white);
+    border-right: 1px solid var(--border-color);
+}
+
+#sidebar .offcanvas-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem;
+}
+
+#sidebar .offcanvas-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+#sidebar .nav-link {
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    margin: 0.125rem 0;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+#sidebar .nav-link:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+}
+
+#sidebar .nav-link.active {
+    background-color: #eff6ff;
+    color: var(--primary-color);
+}
+
+#sidebar hr {
+    border-color: var(--border-color);
+    margin: 1rem 1.5rem;
+}
+
+/* Clean navbar */
+.clean-navbar {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    box-shadow: none;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.btn-menu {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.btn-menu:hover {
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+}
+
+/* Header Section */
+.header-section {
+    background-color: var(--bg-light);
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-section h1 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+/* Gradient Title Styling */
+.gradient-title {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease-in-out infinite;
+    text-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+    position: relative;
+}
+
+/* Animated gradient effect */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Subtle glow effect for the gradient title */
+.gradient-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+    opacity: 0.1;
+    filter: blur(20px);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+/* Gradient Arrow Styling */
+.gradient-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: arrowFadeInBounce 2s ease-out 0.5s forwards;
+}
+
+.gradient-arrow i {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease-in-out infinite, arrowBounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.3));
+}
+
+/* Arrow fade in and bounce animation */
+@keyframes arrowFadeInBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+    80% {
+        transform: translateY(-2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Continuous bouncing animation for the arrow */
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.header-section .lead {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+/* Introduction Section */
+.intro-section {
+    padding: 3rem 0;
+    background-color: var(--bg-white);
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-content p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+}
+
+.intro-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.intro-content a:hover {
+    text-decoration: underline;
+}
+
+/* Topics Section */
+.topics-section {
+    padding: 4rem 0;
+    background-color: var(--bg-light);
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+/* Topic Cards */
+.topic-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: var(--shadow-sm);
+}
+
+.topic-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.topic-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: #eff6ff;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.topic-icon i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.topic-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: #dcfce7;
+    color: #15803d;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.topic-badge-university {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.topic-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.topic-description {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+.btn-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.btn-link:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.btn-link i {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-link:hover i {
+    transform: translateX(2px);
+}
+
+/* Profile Section */
+.profile-section {
+    padding: 4rem 0;
+    background-color: var(--bg-white);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.about-content h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+}
+
+/* Booking Section - Keep the purple background */
+.booking-section {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--booking-bg) 0%, rgba(243, 232, 255, 0.3) 100%);
+}
+
+.booking-header h2 {
+    color: var(--text-primary);
+}
+
+.booking-header .lead {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+.cal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--bg-white);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-md);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 0.5rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--secondary-color);
+    color: #cbd5e1;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Container adjustments */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Remove excessive padding from previous styles */
+section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-section {
+        padding: 3rem 0;
+    }
+    
+    .header-section h1 {
+        font-size: 2rem;
+    }
+    
+    .section-heading {
+        font-size: 1.5rem;
+    }
+    
+    .topic-card {
+        margin-bottom: 1rem;
+    }
+    
+    .video-wrapper {
+        margin-bottom: 2rem;
+    }
+    
+    section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    #sidebar {
+        width: 250px;
+    }
+}
+
+/* Remove old styles */
+.hero-section,
+.section-title,
+.card {
+    /* These are replaced by new styles */
+}
+
+/* Additional utility classes */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-muted {
+    color: var(--text-secondary) !important;
+} 

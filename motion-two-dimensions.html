@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Motion in Two Dimensions - Physics Tutoring Resources</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                tags: 'ams'
+            },
+            chtml: {
+                scale: 1.1
+            }
+        };
+    </script>
+    <style>
+        .topic-content {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .formula-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #dee2e6;
+            border-left: 4px solid #007bff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .formula-box .formula-title {
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .formula-box .equation {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+        
+        .formula-box .variables {
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        
+        .formula-box .variables li {
+            margin-bottom: 5px;
+        }
+        
+        .example-box {
+            border-left: 4px solid #28a745;
+            background-color: #f8fff9;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .example-box .example-title {
+            font-weight: 600;
+            color: #28a745;
+            margin-bottom: 12px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .topic-content h2 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-content h3 {
+            color: #34495e;
+            font-weight: 500;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        
+        .topic-content p {
+            font-size: 1.05em;
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .table-of-contents {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border: none;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .table-of-contents .card-title {
+            color: #1565c0;
+            font-weight: 600;
+        }
+        
+        .table-of-contents a {
+            color: #7b1fa2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .table-of-contents a:hover {
+            color: #4a148c;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Physics Topics</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-one-dimension.html">Motion in One Dimension</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acceleration.html">Acceleration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forces-newtons-laws.html">Forces and Newton's Laws</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-two-dimensions.html">Motion in Two Dimensions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="circular-rotational-motion.html">Circular and Rotational Motion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="momentum.html">Momentum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="work-energy.html">Work and Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="thermal-energy.html">Thermal Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="magnetism.html">Magnetism, Waves & Optics</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html">Jake's Physics Notes</a>
+        <!-- Navigation buttons removed as requested -->
+        </div>
+    </nav>
+
+    <!-- Topic Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#physics">Physics Notes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Motion in Two Dimensions</li>
+                </ol>
+            </nav>
+            <h1 class="section-title">Motion in Two Dimensions</h1>
+            <p class="lead">Understanding vectors, projectile motion, and relative motion in the plane</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="topic-content">
+                <h2>Introduction to Motion in Two Dimensions</h2>
+                <p>Motion in two dimensions involves movement that can't be described using a single coordinate. Instead, we need to consider how an object moves along two perpendicular axes (typically x and y). This requires the use of vectors to represent quantities like position, velocity, and acceleration. From thrown basketballs to orbiting satellites, two-dimensional motion is everywhere around us.</p>
+                
+                <div class="table-of-contents card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">In this section:</h5>
+                        <ol>
+                            <li><a href="#vectors">Vectors in Two Dimensions</a></li>
+                            <li><a href="#position">Position and Displacement</a></li>
+                            <li><a href="#velocity">Velocity in Two Dimensions</a></li>
+                            <li><a href="#acceleration">Acceleration in Two Dimensions</a></li>
+                            <li><a href="#projectile">Projectile Motion</a></li>
+                            <li><a href="#relative">Relative Motion</a></li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h3 id="vectors">Vectors in Two Dimensions</h3>
+                <p>A <strong>vector</strong> is a quantity that has both magnitude (size) and direction. In two dimensions, vectors can be represented by:</p>
+                <ul>
+                    <li>An arrow with length proportional to its magnitude and pointing in the direction of the vector</li>
+                    <li>Components along the x and y axes</li>
+                    <li>Magnitude and angle with respect to a reference axis</li>
+                </ul>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Vector Components and Magnitude</div>
+                    <div class="equation">
+                        \[\text{For vector } \vec{A} \text{ with magnitude } |\vec{A}| \text{ and angle } \theta:\]
+                        \[A_x = |\vec{A}| \cos \theta\]
+                        \[A_y = |\vec{A}| \sin \theta\]
+                        \[|\vec{A}| = \sqrt{A_x^2 + A_y^2}\]
+                        \[\theta = \tan^{-1}\left(\frac{A_y}{A_x}\right)\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(A_x\), \(A_y\) = x and y components of vector \(\vec{A}\)</li>
+                            <li>\(|\vec{A}|\) = magnitude of vector \(\vec{A}\)</li>
+                            <li>\(\theta\) = angle with positive x-axis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3 id="position">Position and Displacement</h3>
+                <p>In two dimensions, the position of an object is described by its coordinates (x, y). <strong>Displacement</strong> is the change in position, which is a vector quantity that points from the initial to the final position.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Displacement in Two Dimensions</div>
+                    <div class="equation">
+                        \[\vec{\Delta r} = (x_f - x_i, y_f - y_i) = (\Delta x, \Delta y)\]
+                        \[|\vec{\Delta r}| = \sqrt{(\Delta x)^2 + (\Delta y)^2}\]
+                        \[\theta = \tan^{-1}\left(\frac{\Delta y}{\Delta x}\right)\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(\vec{\Delta r}\) = displacement vector</li>
+                            <li>\(x_f, y_f\) = final position coordinates</li>
+                            <li>\(x_i, y_i\) = initial position coordinates</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 1: Displacement Calculation</div>
+                    <p>A hiker walks 3 km east and then 4 km north. Find the total displacement.</p>
+                    <p>\(\Delta x = 3\) km, \(\Delta y = 4\) km</p>
+                    <p>\[|\vec{\Delta r}| = \sqrt{(3 \text{ km})^2 + (4 \text{ km})^2} = \sqrt{9 + 16} = 5 \text{ km}\]</p>
+                    <p>\[\theta = \tan^{-1}\left(\frac{4}{3}\right) \approx 53.1° \text{ north of east}\]</p>
+                </div>
+                
+                <h3 id="velocity">Velocity in Two Dimensions</h3>
+                <p>Velocity in two dimensions is a vector that describes both the speed and direction of motion. It can be expressed in terms of its x and y components.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Velocity in Two Dimensions</div>
+                    <div class="equation">
+                        \[\vec{v}_{avg} = \frac{\vec{\Delta r}}{\Delta t} = \left(\frac{\Delta x}{\Delta t}, \frac{\Delta y}{\Delta t}\right) = (v_x, v_y)\]
+                        \[\vec{v} = \lim_{\Delta t \to 0} \frac{\vec{\Delta r}}{\Delta t} = \left(\frac{dx}{dt}, \frac{dy}{dt}\right)\]
+                        \[|\vec{v}| = \sqrt{v_x^2 + v_y^2}\]
+                        \[\theta = \tan^{-1}\left(\frac{v_y}{v_x}\right)\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(\vec{v}_{avg}\) = average velocity vector</li>
+                            <li>\(\vec{v}\) = instantaneous velocity vector</li>
+                            <li>\(|\vec{v}|\) = speed (magnitude of velocity)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3 id="acceleration">Acceleration in Two Dimensions</h3>
+                <p>Acceleration in two dimensions is the rate of change of velocity. Like velocity, it is a vector quantity with x and y components.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Acceleration in Two Dimensions</div>
+                    <div class="equation">
+                        \[\vec{a}_{avg} = \frac{\vec{\Delta v}}{\Delta t} = \left(\frac{\Delta v_x}{\Delta t}, \frac{\Delta v_y}{\Delta t}\right) = (a_x, a_y)\]
+                        \[\vec{a} = \lim_{\Delta t \to 0} \frac{\vec{\Delta v}}{\Delta t} = \left(\frac{dv_x}{dt}, \frac{dv_y}{dt}\right)\]
+                        \[|\vec{a}| = \sqrt{a_x^2 + a_y^2}\]
+                        \[\theta = \tan^{-1}\left(\frac{a_y}{a_x}\right)\]
+                    </div>
+                </div>
+                
+                <h3 id="projectile">Projectile Motion</h3>
+                <p>Projectile motion is a form of two-dimensional motion where an object is projected into the air and is subject only to the force of gravity (air resistance neglected). Examples include a thrown ball, a launched rocket, or water from a fountain.</p>
+                
+                <p><strong>Key features of projectile motion:</strong></p>
+                <ul>
+                    <li>Horizontal motion occurs at constant velocity (\(a_x = 0\))</li>
+                    <li>Vertical motion experiences constant downward acceleration due to gravity (\(a_y = -g\))</li>
+                    <li>The horizontal and vertical motions are independent of each other</li>
+                    <li>The path followed is a parabola</li>
+                </ul>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Projectile Motion Equations</div>
+                    <div class="equation">
+                        \[\text{Horizontal Motion:}\]
+                        \[x = x_0 + v_{0x}t\]
+                        \[v_x = v_{0x} = \text{constant}\]
+                        \[\text{Vertical Motion:}\]
+                        \[y = y_0 + v_{0y}t - \frac{1}{2}gt^2\]
+                        \[v_y = v_{0y} - gt\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(v_{0x}\), \(v_{0y}\) = initial velocity components</li>
+                            <li>\(g = 9.8\) m/s² = acceleration due to gravity</li>
+                            <li>\(t\) = time</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p>For an object projected from ground level at angle \(\theta\) with initial speed \(v_0\):</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Projectile Motion Formulas</div>
+                    <div class="equation">
+                        \[v_{0x} = v_0 \cos \theta, \quad v_{0y} = v_0 \sin \theta\]
+                        \[\text{Time of Flight: } T = \frac{2v_{0y}}{g} = \frac{2v_0 \sin \theta}{g}\]
+                        \[\text{Maximum Height: } h_{max} = \frac{v_{0y}^2}{2g} = \frac{v_0^2 \sin^2 \theta}{2g}\]
+                        \[\text{Horizontal Range: } R = v_{0x} \cdot T = \frac{v_0^2 \sin(2\theta)}{g}\]
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 2: Projectile Motion</div>
+                    <p>A ball is thrown with an initial velocity of 20 m/s at an angle of 30° above the horizontal. Calculate the maximum height and range.</p>
+                    <p><strong>Given:</strong> \(v_0 = 20\) m/s, \(\theta = 30°\)</p>
+                    <p>\[v_{0x} = 20 \cos(30°) = 20 \times 0.866 = 17.32 \text{ m/s}\]</p>
+                    <p>\[v_{0y} = 20 \sin(30°) = 20 \times 0.5 = 10 \text{ m/s}\]</p>
+                    <p>\[h_{max} = \frac{v_{0y}^2}{2g} = \frac{(10)^2}{2(9.8)} = \frac{100}{19.6} \approx 5.1 \text{ m}\]</p>
+                    <p>\[R = \frac{v_0^2 \sin(2\theta)}{g} = \frac{(20)^2 \sin(60°)}{9.8} = \frac{400 \times 0.866}{9.8} \approx 35.3 \text{ m}\]</p>
+                </div>
+                
+                <h3 id="relative">Relative Motion</h3>
+                <p>Relative motion describes how the motion of an object appears to an observer who may also be in motion. The relative velocity of object A with respect to object B is the vector difference of their velocities.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Relative Velocity</div>
+                    <div class="equation">
+                        \[\vec{v}_{AB} = \vec{v}_A - \vec{v}_B\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(\vec{v}_{AB}\) = velocity of object A relative to object B</li>
+                            <li>\(\vec{v}_A\) = velocity of object A in the reference frame</li>
+                            <li>\(\vec{v}_B\) = velocity of object B in the reference frame</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 3: Relative Motion</div>
+                    <p>A boat moves at 5 m/s due east while a river flows at 3 m/s due south. Find the boat's velocity relative to the shore.</p>
+                    <p>\(\vec{v}_{boat} = (5, 0)\) m/s, \(\vec{v}_{river} = (0, -3)\) m/s</p>
+                    <p>\[\vec{v}_{boat,shore} = \vec{v}_{boat} + \vec{v}_{river} = (5, 0) + (0, -3) = (5, -3) \text{ m/s}\]</p>
+                    <p>\[|\vec{v}_{boat,shore}| = \sqrt{5^2 + (-3)^2} = \sqrt{25 + 9} = \sqrt{34} \approx 5.83 \text{ m/s}\]</p>
+                    <p>\[\theta = \tan^{-1}\left(\frac{-3}{5}\right) \approx -31° \text{ (31° south of east)}\]</p>
+                </div>
+                
+                <h2>Applications of Two-Dimensional Motion</h2>
+                <p>Understanding motion in two dimensions is essential for:</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-basketball-ball text-primary"></i> Sports Physics</h5>
+                        <ul>
+                            <li>Ball trajectories in baseball, golf, basketball</li>
+                            <li>Optimizing throwing and kicking techniques</li>
+                            <li>Understanding spin effects</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-plane text-success"></i> Navigation</h5>
+                        <ul>
+                            <li>GPS systems and mapping</li>
+                            <li>Aviation and maritime travel</li>
+                            <li>Accounting for wind and current</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-rocket text-warning"></i> Space & Military</h5>
+                        <ul>
+                            <li>Ballistics and trajectory calculations</li>
+                            <li>Space mission planning</li>
+                            <li>Satellite orbital mechanics</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-gamepad text-danger"></i> Entertainment</h5>
+                        <ul>
+                            <li>Video game physics engines</li>
+                            <li>Animation and special effects</li>
+                            <li>Virtual reality systems</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Key Concepts Summary</h2>
+                <ul>
+                    <li><strong>Vectors</strong> have both magnitude and direction</li>
+                    <li><strong>Components:</strong> \(A_x = A \cos \theta\), \(A_y = A \sin \theta\)</li>
+                    <li><strong>Projectile motion:</strong> parabolic path with independent x and y motions</li>
+                    <li><strong>Horizontal motion:</strong> constant velocity (no acceleration)</li>
+                    <li><strong>Vertical motion:</strong> constant acceleration due to gravity</li>
+                    <li><strong>Relative motion:</strong> \(\vec{v}_{AB} = \vec{v}_A - \vec{v}_B\)</li>
+                </ul>
+                
+                <div class="text-center mt-5 mb-3">
+                    <a href="index.html#physics" class="btn btn-outline-primary btn-lg">Back to Physics Topics</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-primary back-to-top" id="backToTop">↑</button>
+
+    <!-- Footer -->
+    <footer style="height: 10%;">
+        <div class="container">
+            <!-- Footer content removed as requested -->
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Cal floating-popup embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "60-minute-online-paid-session-50", {origin:"https://cal.com"});
+
+      Cal.ns["60-minute-online-paid-session-50"]("floatingButton", {"calLink":"jakobstrozberg/60-minute-online-paid-session-50","config":{"layout":"month_view"},"buttonText":"Book an Online Tutoring Session"}); 
+      Cal.ns["60-minute-online-paid-session-50"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal floating-popup embed code ends -->
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Work and Energy - Physics Tutoring Resources</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                tags: 'ams'
+            },
+            chtml: {
+                scale: 1.1
+            }
+        };
+    </script>
+    <style>
+        .topic-content {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .formula-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #dee2e6;
+            border-left: 4px solid #007bff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .formula-box .formula-title {
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .formula-box .equation {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+        
+        .formula-box .variables {
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        
+        .formula-box .variables li {
+            margin-bottom: 5px;
+        }
+        
+        .example-box {
+            border-left: 4px solid #28a745;
+            background-color: #f8fff9;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .example-box .example-title {
+            font-weight: 600;
+            color: #28a745;
+            margin-bottom: 12px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .topic-content h2 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-content h3 {
+            color: #34495e;
+            font-weight: 500;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        
+        .topic-content h4 {
+            color: #5a6c7d;
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        
+        .topic-content p {
+            font-size: 1.05em;
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .table-of-contents {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border: none;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .table-of-contents .card-title {
+            color: #1565c0;
+            font-weight: 600;
+        }
+        
+        .table-of-contents a {
+            color: #7b1fa2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .table-of-contents a:hover {
+            color: #4a148c;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Physics Topics</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-one-dimension.html">Motion in One Dimension</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acceleration.html">Acceleration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forces-newtons-laws.html">Forces and Newton's Laws</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-two-dimensions.html">Motion in Two Dimensions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="circular-rotational-motion.html">Circular and Rotational Motion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="momentum.html">Momentum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="work-energy.html">Work and Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="thermal-energy.html">Thermal Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="magnetism.html">Magnetism, Waves & Optics</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html">Jake's Physics Notes</a>
+        <!-- Navigation buttons removed as requested -->
+        </div>
+    </nav>
+
+    <!-- Topic Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#physics">Physics Notes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Work and Energy</li>
+                </ol>
+            </nav>
+            <h1 class="section-title">Work and Energy</h1>
+            <p class="lead">Understanding energy transformations and the work-energy theorem</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="topic-content">
+                <h2>Introduction to Work and Energy</h2>
+                <p>Work and energy are fundamental concepts in physics that provide an alternative approach to analyzing motion. Instead of directly using Newton's laws and kinematics, we can often solve problems more easily by considering the work done on an object and the resulting changes in its energy. This approach is particularly powerful for complex systems and provides deep insights into the conservation laws that govern our universe.</p>
+                
+                <div class="table-of-contents card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">In this section:</h5>
+                        <ol>
+                            <li><a href="#work">Work</a></li>
+                            <li><a href="#kinetic">Kinetic Energy</a></li>
+                            <li><a href="#work-energy">Work-Energy Theorem</a></li>
+                            <li><a href="#potential">Potential Energy</a></li>
+                            <li><a href="#conservation">Conservation of Energy</a></li>
+                            <li><a href="#power">Power</a></li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h3 id="work">Work</h3>
+                <p><strong>Work</strong> is the energy transferred to or from an object when a force is applied to it over a distance. Mathematically, work is the dot product of the force vector and the displacement vector.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Work Formula</div>
+                    <div class="equation">
+                        \[W = \vec{F} \cdot \vec{d} = Fd \cos \theta\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(W\) = work (in joules, J)</li>
+                            <li>\(\vec{F}\) = force vector (in newtons, N)</li>
+                            <li>\(\vec{d}\) = displacement vector (in meters, m)</li>
+                            <li>\(\theta\) = angle between force and displacement vectors</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p><strong>Key points about work:</strong></p>
+                <ul>
+                    <li>Work is a scalar quantity (not a vector)</li>
+                    <li>Work can be positive, negative, or zero</li>
+                    <li>Work is positive when the force component is in the same direction as the displacement</li>
+                    <li>Work is negative when the force component opposes the displacement</li>
+                    <li>Work is zero when the force is perpendicular to the displacement (\(\cos 90° = 0\))</li>
+                </ul>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 1: Work Calculation</div>
+                    <p>A person pushes a 50 kg crate with a force of 200 N at an angle of 30° below the horizontal, moving it 5 meters across a floor. Calculate the work done by the pushing force.</p>
+                    <p>\[W = Fd \cos \theta = 200 \text{ N} \times 5 \text{ m} \times \cos(30°)\]</p>
+                    <p>\[W = 200 \times 5 \times 0.866 = 866 \text{ J}\]</p>
+                </div>
+                
+                <h3 id="kinetic">Kinetic Energy</h3>
+                <p><strong>Kinetic energy</strong> is the energy an object possesses due to its motion. It depends on both mass and velocity.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Kinetic Energy Formula</div>
+                    <div class="equation">
+                        \[KE = \frac{1}{2}mv^2\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                <div class="formula">
+                    <p><strong>Kinetic Energy:</strong></p>
+                    <p>KE = ½mv²</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>KE = kinetic energy (in joules, J)</li>
+                        <li>m = mass (in kilograms, kg)</li>
+                        <li>v = speed (in meters per second, m/s)</li>
+                    </ul>
+                </div>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> Calculate the kinetic energy of a 1500 kg car traveling at 20 m/s.</p>
+                    <p>KE = ½mv² = ½ × 1500 kg × (20 m/s)² = 750 kg × 400 m²/s² = 300,000 J = 300 kJ</p>
+                </div>
+                
+                <h3 id="work-energy">Work-Energy Theorem</h3>
+                <p>The work-energy theorem states that the net work done on an object equals the change in its kinetic energy.</p>
+                
+                <div class="formula">
+                    <p><strong>Work-Energy Theorem:</strong></p>
+                    <p>W<sub>net</sub> = ΔKE = KE<sub>final</sub> - KE<sub>initial</sub> = ½m(v<sub>f</sub>² - v<sub>i</sub>²)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>W<sub>net</sub> = net work done on the object</li>
+                        <li>ΔKE = change in kinetic energy</li>
+                        <li>v<sub>i</sub> = initial velocity</li>
+                        <li>v<sub>f</sub> = final velocity</li>
+                    </ul>
+                </div>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A 2 kg ball initially moving at 5 m/s speeds up to 8 m/s. How much work was done on the ball?</p>
+                    <p>W<sub>net</sub> = ΔKE = ½m(v<sub>f</sub>² - v<sub>i</sub>²) = ½ × 2 kg × ((8 m/s)² - (5 m/s)²) = 1 kg × (64 m²/s² - 25 m²/s²) = 39 J</p>
+                </div>
+                
+                <h3 id="potential">Potential Energy</h3>
+                <p>Potential energy is stored energy that an object has due to its position or condition. Two common types are gravitational potential energy and elastic potential energy.</p>
+                
+                <h4>Gravitational Potential Energy</h4>
+                <p>This is the energy an object possesses due to its height above a reference level.</p>
+                
+                <div class="formula">
+                    <p><strong>Gravitational Potential Energy:</strong></p>
+                    <p>PE<sub>g</sub> = mgh</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>PE<sub>g</sub> = gravitational potential energy (in joules, J)</li>
+                        <li>m = mass (in kilograms, kg)</li>
+                        <li>g = acceleration due to gravity (9.8 m/s²)</li>
+                        <li>h = height above the reference level (in meters, m)</li>
+                    </ul>
+                </div>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A 5 kg object is lifted 2 meters above the ground. Calculate its gravitational potential energy relative to the ground.</p>
+                    <p>PE<sub>g</sub> = mgh = 5 kg × 9.8 m/s² × 2 m = 98 J</p>
+                </div>
+                
+                <h4>Elastic Potential Energy</h4>
+                <p>This is the energy stored in elastic materials when they are stretched or compressed.</p>
+                
+                <div class="formula">
+                    <p><strong>Elastic Potential Energy:</strong></p>
+                    <p>PE<sub>e</sub> = ½kx²</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>PE<sub>e</sub> = elastic potential energy (in joules, J)</li>
+                        <li>k = spring constant (in newtons per meter, N/m)</li>
+                        <li>x = displacement from equilibrium position (in meters, m)</li>
+                    </ul>
+                </div>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A spring with a spring constant of 400 N/m is compressed by 0.1 meters. Calculate the elastic potential energy stored in the spring.</p>
+                    <p>PE<sub>e</sub> = ½kx² = ½ × 400 N/m × (0.1 m)² = 200 N/m × 0.01 m² = 2 J</p>
+                </div>
+                
+                <h3 id="conservation">Conservation of Energy</h3>
+                <p>The law of conservation of energy states that energy cannot be created or destroyed but can only be transferred or converted from one form to another. In a closed system, the total energy remains constant.</p>
+                
+                <div class="formula">
+                    <p><strong>Conservation of Mechanical Energy:</strong></p>
+                    <p>KE<sub>i</sub> + PE<sub>i</sub> = KE<sub>f</sub> + PE<sub>f</sub></p>
+                    <p>or</p>
+                    <p>E<sub>total</sub> = constant</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>KE = kinetic energy</li>
+                        <li>PE = potential energy</li>
+                        <li>i = initial state</li>
+                        <li>f = final state</li>
+                    </ul>
+                </div>
+                
+                <p>In the presence of non-conservative forces like friction, the mechanical energy is not conserved, but the total energy (including heat and other forms) is still conserved.</p>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A 2 kg ball is dropped from a height of 5 meters. Neglecting air resistance, what is its speed just before it hits the ground?</p>
+                    <p>Using conservation of energy:</p>
+                    <p>KE<sub>i</sub> + PE<sub>i</sub> = KE<sub>f</sub> + PE<sub>f</sub></p>
+                    <p>0 + mgh = ½mv² + 0</p>
+                    <p>mgh = ½mv²</p>
+                    <p>gh = ½v²</p>
+                    <p>v² = 2gh</p>
+                    <p>v = √(2gh) = √(2 × 9.8 m/s² × 5 m) = √98 m²/s² ≈ 9.9 m/s</p>
+                </div>
+                
+                <h3 id="power">Power</h3>
+                <p>Power is the rate at which work is done or energy is transferred. It tells us how quickly energy is being used or produced.</p>
+                
+                <div class="formula">
+                    <p><strong>Power:</strong></p>
+                    <p>P = W/t = Fv</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>P = power (in watts, W, or joules per second, J/s)</li>
+                        <li>W = work (in joules, J)</li>
+                        <li>t = time (in seconds, s)</li>
+                        <li>F = force (in newtons, N)</li>
+                        <li>v = velocity (in meters per second, m/s)</li>
+                    </ul>
+                </div>
+                
+                <div class="example">
+                    <p><strong>Example:</strong> A 60 kg person climbs a staircase that is 5 meters high in 10 seconds. Calculate the power output.</p>
+                    <p>Work done = mgh = 60 kg × 9.8 m/s² × 5 m = 2940 J</p>
+                    <p>Power = W/t = 2940 J / 10 s = 294 W</p>
+                </div>
+                
+                <h3 id="applications">Applications of Work and Energy</h3>
+                <p>Understanding work and energy is essential for many applications:</p>
+                <ul>
+                    <li>Energy generation and transformation (power plants, solar panels)</li>
+                    <li>Transportation (efficiency of vehicles, regenerative braking)</li>
+                    <li>Sports (optimizing performance, understanding collisions)</li>
+                    <li>Engineering design (elevators, roller coasters, springs)</li>
+                    <li>Environmental science (energy resources, conservation)</li>
+                </ul>
+                
+                <h2>Practice Problems</h2>
+                <p>Coming soon! Check back for practice problems and detailed solutions.</p>
+                
+                <div class="text-center mt-5 mb-3">
+                    <a href="index.html#physics" class="btn btn-outline-primary">Back to Physics Topics</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-primary back-to-top" id="backToTop">↑</button>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer style="height: 10%;">
+        <div class="container">
+            <!-- Footer content removed as requested -->
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Cal floating-popup embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "60-minute-online-paid-session-50", {origin:"https://cal.com"});
+
+      Cal.ns["60-minute-online-paid-session-50"]("floatingButton", {"calLink":"jakobstrozberg/60-minute-online-paid-session-50","config":{"layout":"month_view"},"buttonText":"Book an Online Tutoring Session"}); 
+      Cal.ns["60-minute-online-paid-session-50"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal floating-popup embed code ends -->
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 

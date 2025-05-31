@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Physics Tutoring Resources</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Physics Topics</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-one-dimension.html">Motion in One Dimension</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acceleration.html">Acceleration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forces-newtons-laws.html">Forces and Newton's Laws</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-two-dimensions.html">Motion in Two Dimensions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="circular-rotational-motion.html">Circular and Rotational Motion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="momentum.html">Momentum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="work-energy.html">Work and Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="thermal-energy.html">Thermal Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="magnetism.html">Magnetism, Waves & Optics</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top clean-navbar">
+        <div class="container">
+            <button class="btn btn-menu me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#">Jake's Physics Notes</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4 gradient-title">Jake's Online Physics Notes</h1>
+            <div class="gradient-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <p>Welcome to my online physics tutorials and notes. I created this site to provide a free set of typical high school and university-level physics notes. Currently, I've been adding sections focused on high school topics, and I am gradually expanding to include additional subjects from first-year and upper-year university physics courses.</p>
+                <p>Below, you'll find a complete list of all the topics currently available on this site. I hope you find this material helpful! If you would like further assistance with any physics concepts, feel free to book a tutoring session by clicking the button in the bottom-right corner of the screen. If you have any suggestions for improving this site, please email me <a href="https://www.tutorlyft.com/tutors/jake-strozberg" class="text-primary">here</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section class="topics-section">
+        <div class="container">
+            <h2 class="section-heading mb-5">Available Topics</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="topic-card h-100">
+                        <div class="topic-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="topic-content">
+                            <span class="topic-badge">High School</span>
+                            <h4 class="topic-title">Motion in One Dimension</h4>
+                            <p class="topic-description">Learn about velocity, displacement, and basic kinematics in a straight line.</p>
+                            <a href="motion-one-dimension.html" class="btn-link">
+                                View Notes <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="topic-card h-100">
+                        <div class="topic-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="topic-content">
+                            <span class="topic-badge">High School</span>
+                            <h4 class="topic-title">Acceleration</h4>
+                            <p class="topic-description">Understand the principles of acceleration and how it affects motion.</p>
+                            <a href="acceleration.html" class="btn-link">
+                                View Notes <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="topic-card h-100">
+                        <div class="topic-icon">
+                            <i class="fas fa-weight-hanging"></i>
+                        </div>
+                        <div class="topic-content">
+                            <span class="topic-badge">High School</span>
+                            <h4 class="topic-title">Forces and Newton's Laws</h4>
+                            <p class="topic-description">Explore Newton's three laws of motion and the Law of Gravity.</p>
+                            <a href="forces-newtons-laws.html" class="btn-link">
+                                View Notes <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="topic-card h-100">
+                        <div class="topic-icon">
+                            <i class="fas fa-arrows-alt"></i>
+                        </div>
+                        <div class="topic-content">
+                            <span class="topic-badge">High School</span>
+                            <h4 class="topic-title">Motion in Two Dimensions</h4>
+                            <p class="topic-description">Master projectile motion and vectors in two-dimensional space.</p>
+                            <a href="motion-two-dimensions.html" class="btn-link">
+                                View Notes <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="topic-card h-100">
+                        <div class="topic-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="topic-content">
+                            <span class="topic-badge">High School</span>
+                            <h4 class="topic-title">Circular and Rotational Motion</h4>
+                            <p class="topic-description">Study uniform circular motion, centripetal force, and rotational dynamics.</p>
+                            <a href="circular-rotational-motion.html" class="btn-link">
+                                View Notes <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="topic-card h-100">
+                        <div class="topic-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="topic-content">
+                            <span class="topic-badge">High School</span>
+                            <h4 class="topic-title">Momentum</h4>
+                            <p class="topic-description">Learn about conservation of momentum and collisions.</p>
+                            <a href="momentum.html" class="btn-link">
+                                View Notes <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="topic-card h-100">
+                        <div class="topic-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="topic-content">
+                            <span class="topic-badge">High School</span>
+                            <h4 class="topic-title">Work and Energy</h4>
+                            <p class="topic-description">Understand the relationship between work, energy, and power.</p>
+                            <a href="work-energy.html" class="btn-link">
+                                View Notes <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="topic-card h-100">
+                        <div class="topic-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="topic-content">
+                            <span class="topic-badge">High School</span>
+                            <h4 class="topic-title">Thermal Energy, Heat, and Work</h4>
+                            <p class="topic-description">Explore thermodynamics, heat transfer, and the laws of thermodynamics.</p>
+                            <a href="thermal-energy.html" class="btn-link">
+                                View Notes <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="topic-card h-100">
+                        <div class="topic-icon">
+                            <i class="fas fa-magnet"></i>
+                        </div>
+                        <div class="topic-content">
+                            <span class="topic-badge topic-badge-university">First Year University</span>
+                            <h4 class="topic-title">Magnetism, Waves & Optics</h4>
+                            <p class="topic-description">Study magnetic fields, wave phenomena, optics, and nuclear physics.</p>
+                            <a href="magnetism.html" class="btn-link">
+                                View Notes <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <h2 class="section-heading mb-5">About Me</h2>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VOxo14ysBw0" title="Introduction Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h3 class="mb-3">Hi, I'm Jake!</h3>
+                        <p>I'm a physics enthusiast who loves helping students tackle complex concepts in a clear and engaging way. I'm a recent aerospace engineering graduate. I've spent five summers tree planting in BC, launched a rocket at the Spaceport America Cup, founded two startups, and enjoy coding AI in my free time. I'm also super passionate about space exploration! I'm excited to guide you through physics with energy and clarity.</p>
+                        <p>My teaching approach focuses on building strong foundations in core physics principles while connecting the material to real-world applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-header text-center mb-5">
+                <h2 class="mb-3">Need More Help?</h2>
+                <p class="lead">Book a free consultation to discuss your physics learning goals</p>
+            </div>
+            
+            <div class="cal-container">
+                <!-- Cal inline embed code begins -->
+                <div style="width:100%;height:500px;overflow:scroll;" id="my-cal-inline"></div>
+                <script type="text/javascript">
+                  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                Cal("init", "free-physics-tutoring-consultation", {origin:"https://cal.com"});
+
+                  Cal.ns["free-physics-tutoring-consultation"]("inline", {
+                    elementOrSelector:"#my-cal-inline",
+                    config: {"layout":"month_view","theme":"light"},
+                    calLink: "jakobstrozberg/free-physics-tutoring-consultation",
+                  });
+
+                  Cal.ns["free-physics-tutoring-consultation"]("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
+                </script>
+                <!-- Cal inline embed code ends -->
+            </div>
+            
+            <div class="text-center mt-5">
+                <p class="mb-3 text-muted">Already a student?</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <button class="btn btn-primary btn-lg" data-cal-link="jakobstrozberg/60-minute-online-paid-session-50" data-cal-namespace="60-minute-online-paid-session-50" data-cal-config='{"layout":"month_view","theme":"light"}'>
+                        Book an Online Tutoring Session
+                    </button>
+                    <button class="btn btn-success btn-lg" data-cal-link="jakobstrozberg/in-person-session-at-toronto-public-library-parliament-street-branch-60-minutes-50" data-cal-namespace="in-person-session-at-toronto-public-library-parliament-street-branch-60-minutes-50" data-cal-config='{"layout":"month_view","theme":"auto"}'>
+                        Book an In-person Tutoring Session
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Cal element-click embed code begins -->
+            <script type="text/javascript">
+              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "60-minute-online-paid-session-50", {origin:"https://cal.com"});
+              
+              Cal.ns["60-minute-online-paid-session-50"]("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
+            </script>
+            <!-- Cal element-click embed code ends -->
+            
+            <!-- Cal element-click embed code for in-person sessions begins -->
+            <script type="text/javascript">
+              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "in-person-session-at-toronto-public-library-parliament-street-branch-60-minutes-50", {origin:"https://cal.com"});
+              
+              Cal.ns["in-person-session-at-toronto-public-library-parliament-street-branch-60-minutes-50"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+            </script>
+            <!-- Cal element-click embed code for in-person sessions ends -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Jake's Physics Notes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Cal floating-popup embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "60-minute-online-paid-session-50", {origin:"https://cal.com"});
+
+      Cal.ns["60-minute-online-paid-session-50"]("floatingButton", {"calLink":"jakobstrozberg/60-minute-online-paid-session-50","config":{"layout":"month_view"},"buttonText":"Book an Online Tutoring Session"}); 
+      Cal.ns["60-minute-online-paid-session-50"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal floating-popup embed code ends -->
+</body>
+</html>

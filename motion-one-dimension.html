@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Motion in One Dimension - Physics Tutoring Resources</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                tags: 'ams'
+            },
+            chtml: {
+                scale: 1.1
+            }
+        };
+    </script>
+    <style>
+        .topic-content {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .formula-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #dee2e6;
+            border-left: 4px solid #007bff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .formula-box .formula-title {
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .formula-box .equation {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+        
+        .formula-box .variables {
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        
+        .formula-box .variables li {
+            margin-bottom: 5px;
+        }
+        
+        .example-box {
+            border-left: 4px solid #28a745;
+            background-color: #f8fff9;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .example-box .example-title {
+            font-weight: 600;
+            color: #28a745;
+            margin-bottom: 12px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .topic-content h2 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-content h3 {
+            color: #34495e;
+            font-weight: 500;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        
+        .topic-content p {
+            font-size: 1.05em;
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .table-of-contents {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border: none;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .table-of-contents .card-title {
+            color: #1565c0;
+            font-weight: 600;
+        }
+        
+        .table-of-contents a {
+            color: #7b1fa2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .table-of-contents a:hover {
+            color: #4a148c;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Physics Topics</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-one-dimension.html">Motion in One Dimension</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acceleration.html">Acceleration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forces-newtons-laws.html">Forces and Newton's Laws</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-two-dimensions.html">Motion in Two Dimensions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="circular-rotational-motion.html">Circular and Rotational Motion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="momentum.html">Momentum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="work-energy.html">Work and Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="thermal-energy.html">Thermal Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="magnetism.html">Magnetism, Waves & Optics</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html">Jake's Physics Notes</a>
+        <!-- Navigation buttons removed as requested -->
+        </div>
+    </nav>
+
+    <!-- Topic Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#physics">Physics Notes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Motion in One Dimension</li>
+                </ol>
+            </nav>
+            <h1 class="section-title">Motion in One Dimension</h1>
+            <p class="lead">Understanding the basics of linear motion, velocity, and displacement</p>
+        </div>
+    </section>
+
+    <!-- Topic Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="topic-content">
+                <h2>Introduction to Motion in One Dimension</h2>
+                <p>Motion in one dimension, also known as linear motion, describes the movement of objects along a straight line. This is the simplest form of motion and serves as the foundation for understanding more complex movements. We'll explore how to describe position, calculate displacement and velocity, and understand the relationship between these fundamental quantities.</p>
+                
+                <div class="table-of-contents card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">In this section:</h5>
+                        <ol>
+                            <li><a href="#position">Position and Displacement</a></li>
+                            <li><a href="#velocity">Velocity and Speed</a></li>
+                            <li><a href="#acceleration">Acceleration in One Dimension</a></li>
+                            <li><a href="#equations">Kinematic Equations</a></li>
+                            <li><a href="#free-fall">Free Fall Motion</a></li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h3 id="position">Position and Displacement</h3>
+                <p>The <strong>position</strong> of an object refers to its location relative to a chosen reference point, often denoted as the origin (\(x = 0\)). Position is a vector quantity in higher dimensions, but in one dimension, it's simply a coordinate along a line.</p>
+                
+                <p><strong>Displacement</strong> is the change in position of an object, representing both the distance and direction from the initial to the final position. Unlike distance, displacement can be negative, indicating direction.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Displacement Formula</div>
+                    <div class="equation">
+                        \[\Delta x = x_f - x_i\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(\Delta x\) = displacement (in meters, m)</li>
+                            <li>\(x_f\) = final position (in meters, m)</li>
+                            <li>\(x_i\) = initial position (in meters, m)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 1:</div>
+                    <p>If a car moves from \(x = 5\) m to \(x = 12\) m, the displacement is:</p>
+                    <p>\[\Delta x = 12 \text{ m} - 5 \text{ m} = 7 \text{ m}\]</p>
+                    <p>The positive value indicates the car moved in the positive direction.</p>
+                </div>
+                
+                <h3 id="velocity">Velocity and Speed</h3>
+                <p><strong>Velocity</strong> is the rate of change of displacement with respect to time. It is a vector quantity that includes both magnitude (speed) and direction. <strong>Speed</strong> is the magnitude of velocity and is always positive.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Average Velocity Formula</div>
+                    <div class="equation">
+                        \[v_{avg} = \frac{\Delta x}{\Delta t} = \frac{x_f - x_i}{t_f - t_i}\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(v_{avg}\) = average velocity (in meters per second, m/s)</li>
+                            <li>\(\Delta x\) = displacement (in meters, m)</li>
+                            <li>\(\Delta t\) = time interval (in seconds, s)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p><strong>Instantaneous velocity</strong> is the velocity at a specific moment in time, defined as the limit of the average velocity as the time interval approaches zero:</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Instantaneous Velocity</div>
+                    <div class="equation">
+                        \[v = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt}\]
+                    </div>
+                </div>
+                
+                <h3 id="acceleration">Acceleration in One Dimension</h3>
+                <p><strong>Acceleration</strong> is the rate of change of velocity with respect to time. It describes how quickly an object's velocity changes and can be positive (speeding up in the positive direction) or negative (slowing down or speeding up in the negative direction).</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Average Acceleration Formula</div>
+                    <div class="equation">
+                        \[a_{avg} = \frac{\Delta v}{\Delta t} = \frac{v_f - v_i}{t_f - t_i}\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(a_{avg}\) = average acceleration (in m/s²)</li>
+                            <li>\(\Delta v\) = change in velocity (in m/s)</li>
+                            <li>\(\Delta t\) = time interval (in seconds, s)</li>
+                            <li>\(v_f\) = final velocity, \(v_i\) = initial velocity</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3 id="equations">Kinematic Equations</h3>
+                <p>For motion with <strong>constant acceleration</strong>, we can use the following kinematic equations. These are the fundamental tools for solving one-dimensional motion problems:</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Kinematic Equations for Constant Acceleration</div>
+                    <div class="equation">
+                        \[1.\quad v = v_0 + at\]
+                        \[2.\quad x = x_0 + v_0 t + \frac{1}{2}at^2\]
+                        \[3.\quad v^2 = v_0^2 + 2a(x - x_0)\]
+                        \[4.\quad x - x_0 = \frac{1}{2}(v_0 + v)t\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(x\) = final position, \(x_0\) = initial position</li>
+                            <li>\(v\) = final velocity, \(v_0\) = initial velocity</li>
+                            <li>\(a\) = constant acceleration</li>
+                            <li>\(t\) = time elapsed</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3 id="free-fall">Free Fall Motion</h3>
+                <p>When an object falls under the influence of gravity alone (ignoring air resistance), it experiences <strong>free fall</strong>. Near the Earth's surface, all objects fall with the same acceleration due to gravity, regardless of their mass.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Acceleration Due to Gravity</div>
+                    <div class="equation">
+                        \[g = 9.8 \text{ m/s}^2\]
+                    </div>
+                    <p style="margin-top: 10px; font-style: italic;">Note: This value is directed downward toward Earth's center.</p>
+                </div>
+                
+                <p>For free fall motion, we use the same kinematic equations with \(a = -g\) (if we choose upward as positive) or \(a = +g\) (if we choose downward as positive).</p>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 2: Free Fall Problem</div>
+                    <p>A ball is dropped from a height of 20 meters. How long does it take to reach the ground, and what is its velocity just before impact?</p>
+                    
+                    <p><strong>Step 1:</strong> Find the time using \(x = x_0 + v_0 t + \frac{1}{2}at^2\)</p>
+                    <p>Taking downward as positive: \(x_0 = 0\), \(x = 20\) m, \(v_0 = 0\), \(a = g = 9.8\) m/s²</p>
+                    <p>\[20 = 0 + 0 \cdot t + \frac{1}{2}(9.8)t^2\]</p>
+                    <p>\[t^2 = \frac{40}{9.8} = 4.08\]</p>
+                    <p>\[t = 2.02 \text{ seconds}\]</p>
+                    
+                    <p><strong>Step 2:</strong> Find velocity using \(v = v_0 + at\)</p>
+                    <p>\[v = 0 + 9.8 \times 2.02 = 19.8 \text{ m/s downward}\]</p>
+                </div>
+                
+                <h2>Key Concepts Summary</h2>
+                <ul>
+                    <li><strong>Position</strong> is location relative to a reference point</li>
+                    <li><strong>Displacement</strong> is change in position (can be negative)</li>
+                    <li><strong>Velocity</strong> is the rate of change of displacement</li>
+                    <li><strong>Acceleration</strong> is the rate of change of velocity</li>
+                    <li><strong>Kinematic equations</strong> apply only when acceleration is constant</li>
+                    <li><strong>Free fall</strong> is motion under gravity alone with \(a = g = 9.8\) m/s²</li>
+                </ul>
+                
+                <div class="text-center mt-5 mb-3">
+                    <a href="index.html#physics" class="btn btn-outline-primary btn-lg">Back to Physics Topics</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-primary back-to-top" id="backToTop">↑</button>
+
+    <!-- Footer -->
+    <footer style="height: 10%;">
+        <div class="container">
+            <!-- Footer content removed as requested -->
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    
+    <!-- Cal floating-popup embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "60-minute-online-paid-session-50", {origin:"https://cal.com"});
+
+      Cal.ns["60-minute-online-paid-session-50"]("floatingButton", {"calLink":"jakobstrozberg/60-minute-online-paid-session-50","config":{"layout":"month_view"},"buttonText":"Book an Online Tutoring Session"}); 
+      Cal.ns["60-minute-online-paid-session-50"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal floating-popup embed code ends -->
+</body>
+</html> 

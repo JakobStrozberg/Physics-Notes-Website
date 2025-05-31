@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thermal Energy, Heat, and Work - Physics Tutoring Resources</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                tags: 'ams'
+            },
+            chtml: {
+                scale: 1.1
+            }
+        };
+    </script>
+    <style>
+        .topic-content {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .formula-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #dee2e6;
+            border-left: 4px solid #007bff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .formula-box .formula-title {
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .formula-box .equation {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+        
+        .formula-box .variables {
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        
+        .formula-box .variables li {
+            margin-bottom: 5px;
+        }
+        
+        .example-box {
+            border-left: 4px solid #28a745;
+            background-color: #f8fff9;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .example-box .example-title {
+            font-weight: 600;
+            color: #28a745;
+            margin-bottom: 12px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .topic-content h2 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .topic-content h3 {
+            color: #34495e;
+            font-weight: 500;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        
+        .topic-content h4 {
+            color: #5a6c7d;
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        
+        .topic-content p {
+            font-size: 1.05em;
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .table-of-contents {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border: none;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .table-of-contents .card-title {
+            color: #1565c0;
+            font-weight: 600;
+        }
+        
+        .table-of-contents a {
+            color: #7b1fa2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .table-of-contents a:hover {
+            color: #4a148c;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Physics Topics</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-one-dimension.html">Motion in One Dimension</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acceleration.html">Acceleration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forces-newtons-laws.html">Forces and Newton's Laws</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="motion-two-dimensions.html">Motion in Two Dimensions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="circular-rotational-motion.html">Circular and Rotational Motion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="momentum.html">Momentum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="work-energy.html">Work and Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="thermal-energy.html">Thermal Energy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="magnetism.html">Magnetism, Waves & Optics</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html">Jake's Physics Notes</a>
+        <!-- Navigation buttons removed as requested -->
+        </div>
+    </nav>
+
+    <!-- Topic Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#physics">Physics Notes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Thermal Energy, Heat, and Work</li>
+                </ol>
+            </nav>
+            <h1 class="section-title">Thermal Energy, Heat, and Work</h1>
+            <p class="lead">Understanding temperature, heat transfer, and the laws of thermodynamics</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="topic-content">
+                <h2>Introduction to Thermal Physics</h2>
+                <p>Thermal physics is the study of heat, temperature, and energy transfer. It explains how thermal energy moves between systems and how it affects the properties of matter. Thermodynamics, a branch of thermal physics, provides the fundamental laws that govern these processes and help us understand everything from engines to refrigerators.</p>
+                
+                <div class="table-of-contents card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">In this section:</h5>
+                        <ol>
+                            <li><a href="#temperature">Temperature and Thermal Energy</a></li>
+                            <li><a href="#heat">Heat Transfer</a></li>
+                            <li><a href="#specific">Specific Heat and Phase Changes</a></li>
+                            <li><a href="#laws">Laws of Thermodynamics</a></li>
+                            <li><a href="#engines">Heat Engines and Efficiency</a></li>
+                            <li><a href="#applications">Applications of Thermal Physics</a></li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h3 id="temperature">Temperature and Thermal Energy</h3>
+                <p><strong>Temperature</strong> is a measure of the average kinetic energy of particles in a substance. <strong>Thermal energy</strong>, also called internal energy, is the total energy of all the particles in a system. These concepts are fundamental to understanding how thermal systems behave.</p>
+                
+                <h4>Temperature Scales</h4>
+                <p>Several temperature scales are used in science:</p>
+                <ul>
+                    <li><strong>Celsius (°C):</strong> Water freezes at 0°C and boils at 100°C at standard pressure</li>
+                    <li><strong>Fahrenheit (°F):</strong> Water freezes at 32°F and boils at 212°F at standard pressure</li>
+                    <li><strong>Kelvin (K):</strong> The SI unit of temperature; 0 K is absolute zero (the theoretical temperature at which particles have zero kinetic energy)</li>
+                </ul>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Temperature Conversion</div>
+                    <div class="equation">
+                        \[K = °C + 273.15\]
+                        \[°F = \frac{9}{5}°C + 32\]
+                        \[°C = \frac{5}{9}(°F - 32)\]
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 1: Temperature Conversion</div>
+                    <p>Convert 25°C to Kelvin and Fahrenheit.</p>
+                    <p>\[K = 25°C + 273.15 = 298.15 \text{ K}\]</p>
+                    <p>\[°F = \frac{9}{5}(25°C) + 32 = 45 + 32 = 77°F\]</p>
+                </div>
+                
+                <h3 id="heat">Heat Transfer</h3>
+                <p><strong>Heat</strong> is the transfer of thermal energy from a warmer object to a cooler one. It is not a substance but a process. Heat flows spontaneously from higher temperature to lower temperature until thermal equilibrium is reached.</p>
+                
+                <h4>Methods of Heat Transfer</h4>
+                <ol>
+                    <li><strong>Conduction:</strong> Transfer of heat through direct contact between particles</li>
+                    <li><strong>Convection:</strong> Transfer of heat by the movement of fluids (liquids or gases)</li>
+                    <li><strong>Radiation:</strong> Transfer of heat through electromagnetic waves</li>
+                </ol>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Heat Transfer by Conduction</div>
+                    <div class="equation">
+                        \[H = \frac{kA(T_2 - T_1)t}{L}\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(H\) = heat transferred (in joules, J)</li>
+                            <li>\(k\) = thermal conductivity of the material (W/(m⋅K))</li>
+                            <li>\(A\) = cross-sectional area (in m²)</li>
+                            <li>\(T_2 - T_1\) = temperature difference (in K or °C)</li>
+                            <li>\(t\) = time (in s)</li>
+                            <li>\(L\) = thickness of the material (in m)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 2: Heat Conduction</div>
+                    <p>A glass window pane has an area of 2 m² and a thickness of 0.5 cm. If the inside temperature is 20°C and the outside temperature is 5°C, how much heat is lost through the window in 1 hour? (Thermal conductivity of glass = 0.8 W/(m⋅K))</p>
+                    <p>\[H = \frac{kA(T_2 - T_1)t}{L}\]</p>
+                    <p>\[H = \frac{0.8 \times 2 \times (20 - 5) \times 3600}{0.005} = \frac{0.8 \times 2 \times 15 \times 3600}{0.005}\]</p>
+                    <p>\[H = 1.728 \times 10^7 \text{ J} = 17.28 \text{ MJ}\]</p>
+                </div>
+                
+                <h3 id="specific">Specific Heat and Phase Changes</h3>
+                <p><strong>Specific heat capacity</strong> is the amount of heat required to raise the temperature of 1 kg of a substance by 1°C or 1 K. Different materials have different specific heat capacities, which explains why some materials heat up faster than others.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Heat and Temperature Change</div>
+                    <div class="equation">
+                        \[Q = mc\Delta T\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(Q\) = heat energy transferred (in joules, J)</li>
+                            <li>\(m\) = mass (in kg)</li>
+                            <li>\(c\) = specific heat capacity (J/(kg⋅K) or J/(kg⋅°C))</li>
+                            <li>\(\Delta T\) = change in temperature (in K or °C)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 3: Heating Water</div>
+                    <p>How much heat is needed to raise the temperature of 2 kg of water from 20°C to 80°C? (Specific heat capacity of water = 4,186 J/(kg⋅°C))</p>
+                    <p>\[Q = mc\Delta T = 2 \times 4,186 \times (80 - 20)\]</p>
+                    <p>\[Q = 2 \times 4,186 \times 60 = 502,320 \text{ J} = 502.32 \text{ kJ}\]</p>
+                </div>
+                
+                <h4>Phase Changes</h4>
+                <p>When a substance changes phase (e.g., from solid to liquid or liquid to gas), heat is transferred without a change in temperature. This heat is called <strong>latent heat</strong>.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Heat for Phase Change</div>
+                    <div class="equation">
+                        \[Q = mL\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(Q\) = heat energy transferred (in joules, J)</li>
+                            <li>\(m\) = mass (in kg)</li>
+                            <li>\(L\) = latent heat (J/kg)</li>
+                        </ul>
+                        <strong>Common latent heats for water:</strong>
+                        <ul>
+                            <li>Latent heat of fusion (melting/freezing): 334,000 J/kg</li>
+                            <li>Latent heat of vaporization (boiling/condensing): 2,260,000 J/kg</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 4: Melting Ice</div>
+                    <p>How much heat is required to convert 0.5 kg of ice at 0°C to water at 0°C?</p>
+                    <p>\[Q = mL = 0.5 \text{ kg} \times 334,000 \text{ J/kg} = 167,000 \text{ J} = 167 \text{ kJ}\]</p>
+                </div>
+                
+                <h3 id="laws">Laws of Thermodynamics</h3>
+                <p>The laws of thermodynamics are fundamental principles governing energy transfer and transformation in thermal systems.</p>
+                
+                <h4>Zeroth Law of Thermodynamics</h4>
+                <p>If two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other. This law establishes the concept of temperature as a fundamental property.</p>
+                
+                <h4>First Law of Thermodynamics</h4>
+                <p>Energy cannot be created or destroyed, only transferred or converted from one form to another. This is the principle of conservation of energy applied to thermodynamic systems.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">First Law Equation</div>
+                    <div class="equation">
+                        \[\Delta U = Q - W\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(\Delta U\) = change in internal energy (in J)</li>
+                            <li>\(Q\) = heat added to the system (in J)</li>
+                            <li>\(W\) = work done by the system (in J)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 5: First Law Application</div>
+                    <p>A gas in a cylinder absorbs 800 J of heat and expands, doing 500 J of work. What is the change in internal energy of the gas?</p>
+                    <p>\[\Delta U = Q - W = 800 \text{ J} - 500 \text{ J} = 300 \text{ J}\]</p>
+                </div>
+                
+                <h4>Second Law of Thermodynamics</h4>
+                <p>In any closed system, entropy (a measure of disorder) tends to increase over time. Heat naturally flows from hot to cold, not vice versa. This law explains why some processes are irreversible and sets limits on the efficiency of heat engines.</p>
+                
+                <h4>Third Law of Thermodynamics</h4>
+                <p>As the temperature approaches absolute zero, the entropy of a pure crystalline substance approaches zero. This law establishes a reference point for entropy and explains why absolute zero is theoretically unattainable.</p>
+                
+                <h3 id="engines">Heat Engines and Efficiency</h3>
+                <p>A <strong>heat engine</strong> is a device that converts thermal energy to mechanical work by exploiting temperature differences. Understanding heat engine efficiency is crucial for power generation and energy conservation.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Thermal Efficiency</div>
+                    <div class="equation">
+                        \[\eta = \frac{W}{Q_h} = 1 - \frac{Q_c}{Q_h}\]
+                        \[\text{For a Carnot engine: } \eta_{Carnot} = 1 - \frac{T_c}{T_h}\]
+                    </div>
+                    <div class="variables">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(\eta\) = efficiency (dimensionless, often expressed as percentage)</li>
+                            <li>\(W\) = work output (in J)</li>
+                            <li>\(Q_h\) = heat input from the hot reservoir (in J)</li>
+                            <li>\(Q_c\) = heat rejected to the cold reservoir (in J)</li>
+                            <li>\(T_h\) = absolute temperature of the hot reservoir (in K)</li>
+                            <li>\(T_c\) = absolute temperature of the cold reservoir (in K)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">Example 6: Heat Engine Efficiency</div>
+                    <p>A heat engine operates between a hot reservoir at 500 K and a cold reservoir at 300 K. What is the maximum possible efficiency?</p>
+                    <p>\[\eta_{max} = 1 - \frac{T_c}{T_h} = 1 - \frac{300 \text{ K}}{500 \text{ K}} = 1 - 0.6 = 0.4 \text{ or } 40\%\]</p>
+                </div>
+                
+                <h3 id="applications">Applications of Thermal Physics</h3>
+                <p>Understanding thermal physics is essential for many technological applications and daily life:</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-bolt text-primary"></i> Power Generation</h5>
+                        <ul>
+                            <li>Steam engines and turbines</li>
+                            <li>Nuclear reactor cooling systems</li>
+                            <li>Solar thermal power plants</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-home text-success"></i> HVAC Systems</h5>
+                        <ul>
+                            <li>Heating system design</li>
+                            <li>Air conditioning efficiency</li>
+                            <li>Building insulation optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-snowflake text-warning"></i> Refrigeration</h5>
+                        <ul>
+                            <li>Refrigerators and freezers</li>
+                            <li>Heat pump technology</li>
+                            <li>Cryogenic applications</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-microscope text-danger"></i> Materials Science</h5>
+                        <ul>
+                            <li>Thermal expansion studies</li>
+                            <li>Insulation material development</li>
+                            <li>Heat treatment of metals</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-cloud text-info"></i> Environmental Science</h5>
+                        <ul>
+                            <li>Weather forecasting models</li>
+                            <li>Climate change research</li>
+                            <li>Atmospheric energy balance</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-microchip text-secondary"></i> Electronics</h5>
+                        <ul>
+                            <li>Cooling system design</li>
+                            <li>Thermal management in computers</li>
+                            <li>Electronic component reliability</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Key Concepts Summary</h2>
+                <ul>
+                    <li><strong>Temperature:</strong> Measure of average kinetic energy of particles</li>
+                    <li><strong>Heat transfer:</strong> Conduction, convection, and radiation</li>
+                    <li><strong>Specific heat:</strong> \(Q = mc\Delta T\) - energy needed to change temperature</li>
+                    <li><strong>Phase changes:</strong> \(Q = mL\) - energy for state transitions</li>
+                    <li><strong>First Law:</strong> \(\Delta U = Q - W\) - conservation of energy</li>
+                    <li><strong>Heat engine efficiency:</strong> \(\eta = 1 - \frac{T_c}{T_h}\) - maximum theoretical efficiency</li>
+                </ul>
+                
+                <div class="text-center mt-5 mb-3">
+                    <a href="index.html#physics" class="btn btn-outline-primary btn-lg">Back to Physics Topics</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-primary back-to-top" id="backToTop">↑</button>
+
+    <!-- Footer -->
+    <footer style="height: 10%;">
+        <div class="container">
+            <!-- Footer content removed as requested -->
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    
+    <!-- Cal floating-popup embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "60-minute-online-paid-session-50", {origin:"https://cal.com"});
+
+      Cal.ns["60-minute-online-paid-session-50"]("floatingButton", {"calLink":"jakobstrozberg/60-minute-online-paid-session-50","config":{"layout":"month_view"},"buttonText":"Book an Online Tutoring Session"}); 
+      Cal.ns["60-minute-online-paid-session-50"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal floating-popup embed code ends -->
+</body>
+</html> 
