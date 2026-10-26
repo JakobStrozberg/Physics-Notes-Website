@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jakesphysicsnotes.com/sitemap.xml
