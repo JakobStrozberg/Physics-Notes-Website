@@ -386,14 +386,20 @@
         });
     </script>
     
-    <!-- Cal floating-popup embed code begins -->
-    <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "60-minute-online-paid-session-50", {origin:"https://cal.com"});
-
-      Cal.ns["60-minute-online-paid-session-50"]("floatingButton", {"calLink":"jakobstrozberg/60-minute-online-paid-session-50","config":{"layout":"month_view"},"buttonText":"Book an Online Tutoring Session"}); 
-      Cal.ns["60-minute-online-paid-session-50"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    <!-- Floating tutoring button -->
+    <a href="https://www.tutorlyft.com/tutors/jakob-sol-strozberg" target="_blank" rel="noopener noreferrer" class="floating-tutoring-btn" style="position: fixed; bottom: 20px; right: 20px; background-color: #0d6efd; color: white; padding: 15px 20px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 6px rgba(0,0,0,0.2); z-index: 1000; font-weight: 500; transition: all 0.3s ease;">Book an Online Tutoring Session</a>
+    
+    <script>
+        // Floating button hover effect
+        const floatingBtn = document.querySelector('.floating-tutoring-btn');
+        floatingBtn.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#0b5ed7';
+            this.style.transform = 'scale(1.05)';
+        });
+        floatingBtn.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '#0d6efd';
+            this.style.transform = 'scale(1)';
+        });
     </script>
-    <!-- Cal floating-popup embed code ends -->
 </body>
 </html> 
