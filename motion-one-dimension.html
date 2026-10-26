@@ -16,6 +16,60 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Motion in One Dimension - Physics Tutorial",
+      "description": "Learn about motion in one dimension including velocity, displacement, acceleration, and kinematic equations. Complete guide with formulas and examples.",
+      "author": {
+        "@type": "Person",
+        "name": "Jake Strozberg"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Jake's Physics Notes"
+      },
+      "educationalLevel": "High School",
+      "learningResourceType": "Tutorial",
+      "educationalUse": "Study Guide"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is motion in one dimension?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Motion in one dimension, also known as linear motion, describes the movement of objects along a straight line. It is the simplest form of motion and serves as the foundation for understanding more complex movements. Objects move along a single axis with position described by a coordinate."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What are the main formulas for motion in 1D?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main kinematic equations for constant acceleration in one dimension are: (1) v = v₀ + at, (2) x = x₀ + v₀t + ½at², (3) v² = v₀² + 2a(x - x₀), and (4) x - x₀ = ½(v₀ + v)t. These relate position, velocity, acceleration, and time."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the difference between displacement and distance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Displacement is the change in position (final position minus initial position) and includes direction, so it can be negative. Distance is the total path length traveled and is always positive. For example, if you walk 5m forward then 3m back, your displacement is 2m but distance traveled is 8m."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is velocity vs speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Velocity is the rate of change of displacement with respect to time and includes direction (it's a vector). Speed is the magnitude of velocity and is always positive. Average velocity equals displacement divided by time, while speed is distance divided by time."
+        }
+      }]
+    }
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
         window.MathJax = {
@@ -133,6 +187,59 @@
             color: #4a148c;
             text-decoration: underline;
         }
+        
+        .motion-demo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .motion-track {
+            position: relative;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .motion-object {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #ffd700;
+            border-radius: 50%;
+            top: 20px;
+            left: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            animation: moveObject 4s ease-in-out infinite;
+        }
+        
+        @keyframes moveObject {
+            0%, 100% { left: 10px; }
+            50% { left: calc(100% - 50px); }
+        }
+        
+        .motion-axis {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+        
+        .motion-demo h4 {
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+        
+        .motion-demo p {
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
     </style>
 </head>
 <body>
@@ -212,6 +319,20 @@
                 <h2>Introduction to Motion in One Dimension</h2>
                 <p>Motion in one dimension, also known as linear motion, describes the movement of objects along a straight line. This is the simplest form of motion and serves as the foundation for understanding more complex movements. We'll explore how to describe position, calculate displacement and velocity, and understand the relationship between these fundamental quantities.</p>
                 
+                <div class="motion-demo">
+                    <h4>Motion Visualization</h4>
+                    <p>Watch how an object moves along a straight line - this is one-dimensional motion:</p>
+                    <div class="motion-track">
+                        <div class="motion-object"></div>
+                    </div>
+                    <div class="motion-axis">
+                        <span>Start Position (x₀)</span>
+                        <span>→ Direction of Motion →</span>
+                        <span>Final Position (x)</span>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.95;">The yellow dot represents an object moving back and forth along a line. Its position changes with time, which we measure as displacement (Δx = x - x₀).</p>
+                </div>
+                
                 <div class="table-of-contents card mb-4">
                     <div class="card-body">
                         <h5 class="card-title">In this section:</h5>
@@ -280,7 +401,7 @@
                 </div>
                 
                 <h3 id="acceleration">Acceleration in One Dimension</h3>
-                <p><strong>Acceleration</strong> is the rate of change of velocity with respect to time. It describes how quickly an object's velocity changes and can be positive (speeding up in the positive direction) or negative (slowing down or speeding up in the negative direction).</p>
+                <p><strong>Acceleration</strong> is the rate of change of velocity with respect to time. It describes how quickly an object's velocity changes and can be positive (speeding up in the positive direction) or negative (slowing down or speeding up in the negative direction). For a deeper understanding of acceleration and its applications, see our detailed <a href="acceleration.html">acceleration tutorial</a>.</p>
                 
                 <div class="formula-box">
                     <div class="formula-title">Average Acceleration Formula</div>
@@ -321,7 +442,7 @@
                 </div>
                 
                 <h3 id="free-fall">Free Fall Motion</h3>
-                <p>When an object falls under the influence of gravity alone (ignoring air resistance), it experiences <strong>free fall</strong>. Near the Earth's surface, all objects fall with the same acceleration due to gravity, regardless of their mass.</p>
+                <p>When an object falls under the influence of gravity alone (ignoring air resistance), it experiences <strong>free fall</strong>. Near the Earth's surface, all objects fall with the same acceleration due to gravity, regardless of their mass. This constant acceleration is a fundamental concept that connects to <a href="forces-newtons-laws.html">Newton's laws and gravitational force</a>.</p>
                 
                 <div class="formula-box">
                     <div class="formula-title">Acceleration Due to Gravity</div>
@@ -347,7 +468,7 @@
                     <p>\[v = 0 + 9.8 \times 2.02 = 19.8 \text{ m/s downward}\]</p>
                 </div>
                 
-                <h2>Key Concepts Summary</h2>
+                <h2>Key Takeaways</h2>
                 <ul>
                     <li><strong>Position</strong> is location relative to a reference point</li>
                     <li><strong>Displacement</strong> is change in position (can be negative)</li>
@@ -356,6 +477,21 @@
                     <li><strong>Kinematic equations</strong> apply only when acceleration is constant</li>
                     <li><strong>Free fall</strong> is motion under gravity alone with \(a = g = 9.8\) m/s²</li>
                 </ul>
+                
+                <h2>Frequently Asked Questions</h2>
+                <div class="formula-box" style="border-left-color: #28a745;">
+                    <h4>What is motion in one dimension?</h4>
+                    <p>Motion in one dimension describes the movement of objects along a straight line. It's the simplest form of motion where position changes along a single axis. Think of a car driving straight down a highway or a ball dropping straight down.</p>
+                    
+                    <h4>What are the main formulas for motion in 1D?</h4>
+                    <p>For constant acceleration, use these kinematic equations: <strong>v = v₀ + at</strong> (velocity after time t), <strong>x = x₀ + v₀t + ½at²</strong> (position after time t), <strong>v² = v₀² + 2a(x - x₀)</strong> (velocity after displacement), and <strong>Δx = ½(v₀ + v)t</strong> (displacement from average velocity).</p>
+                    
+                    <h4>What's the difference between displacement and distance?</h4>
+                    <p>Displacement is the straight-line change from start to end position and includes direction (can be negative). Distance is the total path length and is always positive. If you walk 5m forward then 3m back, displacement = 2m, distance = 8m.</p>
+                    
+                    <h4>What is velocity vs speed?</h4>
+                    <p>Velocity includes direction (vector quantity) and equals displacement/time. Speed is just how fast something moves (scalar) and equals distance/time. A car going 60 km/h north has a speed of 60 km/h and velocity of +60 km/h (if north is positive).</p>
+                </div>
                 
                 <div class="text-center mt-5 mb-3">
                     <a href="index.html#physics" class="btn btn-outline-primary btn-lg">Back to Physics Topics</a>

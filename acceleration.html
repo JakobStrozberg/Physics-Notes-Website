@@ -16,6 +16,53 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Acceleration - Physics Tutorial",
+      "description": "Learn about acceleration, the rate of change of velocity. Covers average and instantaneous acceleration, constant acceleration, kinematic equations, and acceleration due to gravity.",
+      "author": {
+        "@type": "Person",
+        "name": "Jake Strozberg"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Jake's Physics Notes"
+      },
+      "educationalLevel": "High School",
+      "learningResourceType": "Tutorial",
+      "educationalUse": "Study Guide"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is acceleration in physics?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Acceleration is the rate at which an object's velocity changes with time. It is a vector quantity with both magnitude and direction, measured in meters per second squared (m/s²). Acceleration can result from changes in speed, direction, or both."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the formula for acceleration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Average acceleration is calculated as a = Δv/Δt = (v_f - v_i)/(t_f - t_i), where v_f is final velocity, v_i is initial velocity, and Δt is the time interval. For constant acceleration, use the kinematic equations like v = v₀ + at."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the acceleration due to gravity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Near Earth's surface, the acceleration due to gravity is approximately 9.8 m/s² (or 32 ft/s²), directed toward the center of the Earth. All objects fall with this same acceleration regardless of their mass, when air resistance is negligible."
+        }
+      }]
+    }
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
         window.MathJax = {
@@ -210,7 +257,7 @@
         <div class="container">
             <div class="topic-content">
                 <h2>Introduction to Acceleration</h2>
-                <p>Acceleration is the rate at which an object's velocity changes with time. It is a vector quantity, meaning it has both magnitude and direction. Acceleration plays a fundamental role in Newton's laws of motion and is central to understanding the dynamics of moving objects. Whether an object is speeding up, slowing down, or changing direction, acceleration is the key concept that describes these changes.</p>
+                <p>Acceleration is the rate at which an object's velocity changes with time. It is a vector quantity, meaning it has both magnitude and direction. Acceleration plays a fundamental role in <a href="forces-newtons-laws.html">Newton's laws of motion</a> and is central to understanding the dynamics of moving objects. Whether an object is speeding up, slowing down, or changing direction, acceleration is the key concept that describes these changes. For the foundation of velocity and displacement, see <a href="motion-one-dimension.html">motion in one dimension</a>.</p>
                 
                 <div class="table-of-contents card mb-4">
                     <div class="card-body">
@@ -283,7 +330,7 @@
                 <p>Instantaneous acceleration tells us how quickly velocity is changing at any given moment, which is particularly useful when acceleration varies with time.</p>
                 
                 <h3 id="constant">Constant Acceleration</h3>
-                <p>Many common scenarios involve constant acceleration, where the acceleration remains the same throughout the motion. This is particularly important because it allows us to use simplified kinematic equations.</p>
+                <p>Many common scenarios involve constant acceleration, where the acceleration remains the same throughout the motion. This is particularly important because it allows us to use simplified kinematic equations, connecting back to the fundamentals of <a href="motion-one-dimension.html">linear motion</a>.</p>
                 
                 <p><strong>Examples of constant acceleration include:</strong></p>
                 <ul>
@@ -324,7 +371,7 @@
                 </div>
                 
                 <h3 id="gravity">Acceleration Due to Gravity</h3>
-                <p>One of the most important accelerations we encounter is the acceleration due to gravity. Near Earth's surface, all objects fall with approximately the same acceleration (ignoring air resistance), regardless of their mass.</p>
+                <p>One of the most important accelerations we encounter is the acceleration due to gravity. Near Earth's surface, all objects fall with approximately the same acceleration (ignoring air resistance), regardless of their mass. This principle, discovered through <a href="forces-newtons-laws.html">Newton's law of universal gravitation</a>, is fundamental to understanding free fall and projectile motion.</p>
                 
                 <div class="formula-box">
                     <div class="formula-title">Acceleration Due to Gravity</div>
