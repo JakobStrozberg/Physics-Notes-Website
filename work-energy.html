@@ -16,6 +16,74 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Work and Energy Notes | Physics Formulas and Examples",
+      "description": "Work, kinetic energy, potential energy, and conservation of energy explained with formulas, examples, and applications.",
+      "author": {
+        "@type": "Person",
+        "name": "Jake Strozberg"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Jake's Physics Notes"
+      },
+      "educationalLevel": "High School",
+      "learningResourceType": "Tutorial",
+      "educationalUse": "Study Guide"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the work-energy theorem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The work-energy theorem states that the net work done on an object equals the change in its kinetic energy: W_net = ΔKE = ½m(v_f² - v_i²). This means that when you do work on an object, you change its kinetic energy by exactly that amount."
+        }
+      }, {
+        "@type": "Question",
+        "name": "When is work negative or zero?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Work is negative when the force opposes the direction of motion (like friction slowing you down). Work is zero when the force is perpendicular to displacement (like when you carry a box horizontally - gravity does no work) or when there is no displacement at all."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the difference between work and energy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Energy is the capacity to do work - it's what an object has. Work is the transfer of energy - it's what happens when a force moves an object. Energy is measured at one instant, while work requires both a force and a displacement over distance."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How do you calculate work done at an angle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use W = Fd cos θ, where θ is the angle between the force and displacement. Only the component of force in the direction of motion does work. For example, if you push at 30° with 100N over 5m: W = 100 × 5 × cos(30°) = 433 J."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is energy conserved when there is friction?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mechanical energy (kinetic + potential) is not conserved when friction is present, because friction converts mechanical energy to thermal energy. However, total energy including heat is always conserved. This is why objects sliding on rough surfaces slow down and get warm."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is power and how does it relate to work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Power is the rate at which work is done or energy is transferred: P = W/t, measured in watts (joules per second). A 100-watt lightbulb uses 100 joules of energy every second. More power means the same work gets done faster, or more work gets done in the same time."
+        }
+      }]
+    }
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
         window.MathJax = {
@@ -216,7 +284,7 @@
         <div class="container">
             <div class="topic-content">
                 <h2>Introduction to Work and Energy</h2>
-                <p>Work and energy are fundamental concepts in physics that provide an alternative approach to analyzing motion. Instead of directly using Newton's laws and kinematics, we can often solve problems more easily by considering the work done on an object and the resulting changes in its energy. This approach is particularly powerful for complex systems and provides deep insights into the conservation laws that govern our universe.</p>
+                <p>Work and energy are fundamental concepts in physics that provide an alternative approach to analyzing motion. Instead of directly using <a href="forces-newtons-laws.html">Newton's laws</a> and <a href="motion-one-dimension.html">kinematics</a>, we can often solve problems more easily by considering the work done on an object and the resulting changes in its energy. This approach is particularly powerful for complex systems and provides deep insights into the conservation laws that govern our universe.</p>
                 
                 <div class="table-of-contents card mb-4">
                     <div class="card-body">
@@ -373,7 +441,7 @@
                     </ul>
                 </div>
                 
-                <p>In the presence of non-conservative forces like friction, the mechanical energy is not conserved, but the total energy (including heat and other forms) is still conserved.</p>
+                <p>In the presence of non-conservative forces like friction, the mechanical energy is not conserved, but the total energy (including <a href="thermal-energy.html">heat and other forms</a>) is still conserved.</p>
                 
                 <div class="example">
                     <p><strong>Example:</strong> A 2 kg ball is dropped from a height of 5 meters. Neglecting air resistance, what is its speed just before it hits the ground?</p>
@@ -413,10 +481,41 @@
                 <ul>
                     <li>Energy generation and transformation (power plants, solar panels)</li>
                     <li>Transportation (efficiency of vehicles, regenerative braking)</li>
-                    <li>Sports (optimizing performance, understanding collisions)</li>
+                    <li>Sports (optimizing performance, understanding <a href="momentum.html">collisions</a>)</li>
                     <li>Engineering design (elevators, roller coasters, springs)</li>
                     <li>Environmental science (energy resources, conservation)</li>
                 </ul>
+                
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>Work formula:</strong> W = Fd cos θ - work depends on force, displacement, and angle between them</li>
+                    <li><strong>Kinetic energy:</strong> KE = ½mv² - energy of motion increases with mass and velocity squared</li>
+                    <li><strong>Potential energy:</strong> PE<sub>g</sub> = mgh for gravity; PE<sub>e</sub> = ½kx² for springs</li>
+                    <li><strong>Work-energy theorem:</strong> Net work equals change in kinetic energy (W<sub>net</sub> = ΔKE)</li>
+                    <li><strong>Conservation of energy:</strong> Total energy remains constant; mechanical energy conserved without friction</li>
+                    <li><strong>Power:</strong> P = W/t - rate of doing work, measured in watts (joules per second)</li>
+                </ul>
+                
+                <h2>Frequently Asked Questions</h2>
+                <div class="formula-box" style="border-left-color: #28a745;">
+                    <h4>What is the work-energy theorem?</h4>
+                    <p>The work-energy theorem states that the net work done on an object equals the change in its kinetic energy: W<sub>net</sub> = ΔKE = ½m(v<sub>f</sub>² - v<sub>i</sub>²). This means that when you do work on an object, you change its kinetic energy by exactly that amount.</p>
+                    
+                    <h4>When is work negative or zero?</h4>
+                    <p>Work is negative when the force opposes the direction of motion (like friction slowing you down). Work is zero when the force is perpendicular to displacement (like when you carry a box horizontally - gravity does no work) or when there is no displacement at all.</p>
+                    
+                    <h4>What is the difference between work and energy?</h4>
+                    <p>Energy is the capacity to do work - it's what an object has. Work is the transfer of energy - it's what happens when a force moves an object. Energy is measured at one instant, while work requires both a force and a displacement over distance.</p>
+                    
+                    <h4>How do you calculate work done at an angle?</h4>
+                    <p>Use W = Fd cos θ, where θ is the angle between the force and displacement. Only the component of force in the direction of motion does work. For example, if you push at 30° with 100N over 5m: W = 100 × 5 × cos(30°) = 433 J.</p>
+                    
+                    <h4>Is energy conserved when there is friction?</h4>
+                    <p>Mechanical energy (kinetic + potential) is not conserved when friction is present, because friction converts mechanical energy to thermal energy. However, total energy including heat is always conserved. This is why objects sliding on rough surfaces slow down and get warm.</p>
+                    
+                    <h4>What is power and how does it relate to work?</h4>
+                    <p>Power is the rate at which work is done or energy is transferred: P = W/t, measured in watts (joules per second). A 100-watt lightbulb uses 100 joules of energy every second. More power means the same work gets done faster, or more work gets done in the same time.</p>
+                </div>
                 
                 <h2>Practice Problems</h2>
                 <p>Coming soon! Check back for practice problems and detailed solutions.</p>
