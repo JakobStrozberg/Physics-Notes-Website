@@ -16,6 +16,74 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Circular and Rotational Motion Notes | Physics",
+      "description": "Uniform circular motion, centripetal force, angular velocity, and rotational dynamics explained with formulas and examples.",
+      "author": {
+        "@type": "Person",
+        "name": "Jake Strozberg"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Jake's Physics Notes"
+      },
+      "educationalLevel": "High School",
+      "learningResourceType": "Tutorial",
+      "educationalUse": "Study Guide"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is centripetal force?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Centripetal force is the net force that causes an object to move in a circular path, always directed toward the center of the circle. It's not a new type of force but rather the name for whatever force (tension, friction, gravity) provides the inward acceleration needed for circular motion."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the formula for centripetal acceleration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The formula for centripetal acceleration is a = v²/r, where v is the linear speed and r is the radius of the circular path. It can also be expressed as a = ω²r using angular velocity ω. This acceleration always points toward the center of the circle."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the difference between angular velocity and linear velocity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Linear velocity (v) is the straight-line speed of an object, measured in m/s. Angular velocity (ω) is the rate of rotation, measured in radians per second (rad/s). They're related by v = rω, where r is the radius. Two points on a rotating object have the same ω but different v if they're at different distances from the axis."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is centripetal force a real force?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Centripetal force is real but not fundamental - it's the name we give to whatever net force causes circular motion. For a car turning, it's friction; for a satellite orbiting Earth, it's gravity; for a ball on a string, it's tension. The term describes the role of the force, not a new type of force."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is torque?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Torque is the rotational equivalent of force - it causes objects to rotate. Calculated as τ = rF sin θ, it depends on the force magnitude, the distance from the rotation axis (lever arm), and the angle between them. Torque is measured in newton-meters (N⋅m)."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is moment of inertia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Moment of inertia (I) is the rotational equivalent of mass - it measures an object's resistance to rotational acceleration. It depends on both the mass and how that mass is distributed relative to the rotation axis. Calculated as I = Σmr², where mass farther from the axis contributes more."
+        }
+      }]
+    }
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
         window.MathJax = {
@@ -217,7 +285,7 @@
         <div class="container">
             <div class="topic-content">
                 <h2>Introduction to Circular and Rotational Motion</h2>
-                <p>Circular motion involves the movement of an object along a circular path, while rotational motion involves the rotation of an object around an axis. These types of motion are crucial in understanding everything from planetary orbits to spinning tops and wheels. Both types of motion involve angular quantities that provide elegant ways to describe rotational phenomena.</p>
+                <p>Circular motion involves the movement of an object along a circular path, while rotational motion involves the rotation of an object around an axis. These types of motion are crucial in understanding everything from planetary orbits to spinning tops and wheels. Both types of motion involve angular quantities that provide elegant ways to describe rotational phenomena. Understanding circular motion builds on concepts from <a href="forces-newtons-laws.html">forces and Newton's laws</a> and <a href="motion-two-dimensions.html">motion in two dimensions</a>.</p>
                 
                 <div class="table-of-contents card mb-4">
                     <div class="card-body">
@@ -233,6 +301,16 @@
                         </ol>
                     </div>
                 </div>
+                
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>Uniform circular motion:</strong> Object moves in a circular path at constant speed but with continuously changing velocity direction, requiring centripetal acceleration</li>
+                    <li><strong>Centripetal acceleration:</strong> a = v²/r - acceleration toward the center of the circle, perpendicular to velocity</li>
+                    <li><strong>Centripetal force:</strong> F = mv²/r - net inward force required to maintain circular motion (provided by tension, friction, or gravity)</li>
+                    <li><strong>Angular velocity:</strong> ω = v/r relates rotational and linear motion; measured in radians per second (rad/s)</li>
+                    <li><strong>Period and frequency:</strong> T = 2πr/v is the time for one revolution; f = 1/T is revolutions per second</li>
+                    <li><strong>Torque and moment of inertia:</strong> τ = Iα is Newton's second law for rotation, where torque causes angular acceleration based on rotational inertia</li>
+                </ul>
                 
                 <h3 id="uniform">Uniform Circular Motion</h3>
                 <p><strong>Uniform circular motion</strong> occurs when an object moves along a circular path with constant speed. Despite the constant speed, the object is constantly accelerating because its direction is continuously changing.</p>
@@ -418,7 +496,7 @@
                 </div>
                 
                 <h3 id="energy">Rotational Energy and Angular Momentum</h3>
-                <p>Objects in rotational motion possess rotational kinetic energy and angular momentum, which are the rotational analogs of linear kinetic energy and momentum.</p>
+                <p>Objects in rotational motion possess rotational kinetic energy and angular momentum, which are the rotational analogs of linear kinetic energy and <a href="momentum.html">momentum</a>. Just as <a href="work-energy.html">work and energy</a> apply to linear motion, similar conservation principles govern rotational systems.</p>
                 
                 <div class="formula-box">
                     <div class="formula-title">Rotational Kinetic Energy and Angular Momentum</div>
@@ -493,6 +571,27 @@
                             <li>Bicycle and motorcycle dynamics</li>
                         </ul>
                     </div>
+                </div>
+                
+                <h2>Frequently Asked Questions</h2>
+                <div class="formula-box" style="border-left-color: #28a745;">
+                    <h4>What is centripetal force?</h4>
+                    <p>Centripetal force is the net force that causes an object to move in a circular path, always directed toward the center of the circle. It's not a new type of force but rather the name for whatever force (tension, friction, gravity) provides the inward acceleration needed for circular motion.</p>
+                    
+                    <h4>What is the formula for centripetal acceleration?</h4>
+                    <p>The formula for centripetal acceleration is a = v²/r, where v is the linear speed and r is the radius of the circular path. It can also be expressed as a = ω²r using angular velocity ω. This acceleration always points toward the center of the circle.</p>
+                    
+                    <h4>What is the difference between angular velocity and linear velocity?</h4>
+                    <p>Linear velocity (v) is the straight-line speed of an object, measured in m/s. Angular velocity (ω) is the rate of rotation, measured in radians per second (rad/s). They're related by v = rω, where r is the radius. Two points on a rotating object have the same ω but different v if they're at different distances from the axis.</p>
+                    
+                    <h4>Is centripetal force a real force?</h4>
+                    <p>Centripetal force is real but not fundamental - it's the name we give to whatever net force causes circular motion. For a car turning, it's friction; for a satellite orbiting Earth, it's gravity; for a ball on a string, it's tension. The term describes the role of the force, not a new type of force.</p>
+                    
+                    <h4>What is torque?</h4>
+                    <p>Torque is the rotational equivalent of force - it causes objects to rotate. Calculated as τ = rF sin θ, it depends on the force magnitude, the distance from the rotation axis (lever arm), and the angle between them. Torque is measured in newton-meters (N⋅m).</p>
+                    
+                    <h4>What is moment of inertia?</h4>
+                    <p>Moment of inertia (I) is the rotational equivalent of mass - it measures an object's resistance to rotational acceleration. It depends on both the mass and how that mass is distributed relative to the rotation axis. Calculated as I = Σmr², where mass farther from the axis contributes more.</p>
                 </div>
                 
                 <h2>Key Concepts Summary</h2>
